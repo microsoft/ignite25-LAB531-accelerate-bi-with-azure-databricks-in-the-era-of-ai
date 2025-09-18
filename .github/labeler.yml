@@ -1,0 +1,50 @@
+# Configuration for automatic issue labeling
+# This file is used by the github/issue-labeler action
+
+# Label for documentation-related issues
+documentation:
+  - "documentation"
+  - "docs"
+  - "readme"
+
+# Label for bug reports
+bug:
+  - "bug"
+  - "error"
+  - "issue"
+  - "problem"
+  - "broken"
+
+# Label for feature requests
+enhancement:
+  - "feature"
+  - "enhancement"
+  - "improvement"
+  - "request"
+
+# Label for questions
+question:
+  - "question"
+  - "help"
+  - "how to"
+  - "support"
+
+# Label for Azure Databricks related issues
+azure-databricks:
+  - "azure"
+  - "databricks"
+  - "spark"
+
+# Label for BI related issues
+business-intelligence:
+  - "bi"
+  - "business intelligence"
+  - "analytics"
+  - "reporting"
+
+# Label for AI related issues
+artificial-intelligence:
+  - "ai"
+  - "artificial intelligence"
+  - "machine learning"
+  - "ml"
