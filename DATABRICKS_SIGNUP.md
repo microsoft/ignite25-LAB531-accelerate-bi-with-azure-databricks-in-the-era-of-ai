@@ -1,10 +1,10 @@
-# Sign Up for Databricks Community Edition
+# Sign Up for Databricks Free Edition
 
 Follow these simple steps to create your free Databricks account:
 
 ## Step 1: Visit the Signup Page
 
-Go to the Databricks Community Edition signup page:
+Go to the Databricks Free Edition signup page:
 
 **https://login.databricks.com/?dbx_source=YOUR_PROGRAM_NAME&intent=SIGN_UP**
 

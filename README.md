@@ -116,7 +116,7 @@ For more information, setup instructions for other dev clients, and to post comm
 
 **Required:**
 - Databricks workspace access (URL from instructor)
-  - **You can also run this lab in Databricks Community Edition** - [Sign up steps here](DATABRICKS_SIGNUP.md) (free, no credit card required)
+  - **You can also run this lab in Databricks Free Edition** - [Sign up steps here](DATABRICKS_SIGNUP.md) (free, no credit card required)
 - Source data access: `samples.wanderbricks`
 
 **Recommended:**
