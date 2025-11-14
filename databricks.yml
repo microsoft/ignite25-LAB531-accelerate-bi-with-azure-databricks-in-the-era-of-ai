@@ -1,0 +1,56 @@
+# This is a Databricks asset bundle definition for wanderbricks_lab.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+bundle:
+  name: wanderbricks_lab
+  uuid: 305e1e29-74c7-40ac-883e-d30c284971ae
+
+include:
+  - resources/*.yml
+
+# Resources defined directly in main bundle file
+resources:
+  apps:
+    wanderbricks_booking_app:
+      name: wanderbricks-booking-app
+      description: "Interactive booking platform for Wanderbricks vacation rentals"
+      source_code_path: ./lab/05-app/backend
+      resources:
+        - name: sql-warehouse
+          description: SQL Warehouse for app queries
+          sql_warehouse:
+            id: PLACEHOLDER_WAREHOUSE_ID
+            permission: CAN_USE
+
+# Variable declarations. These variables are assigned in the dev target below.
+variables:
+  catalog:
+    description: Target catalog for pipeline outputs
+  schema:
+    description: Target schema for pipeline outputs
+  source_catalog_schema:
+    description: Source catalog.schema containing raw data (e.g., samples.wanderbricks)
+    default: samples.wanderbricks
+  warehouse_id:
+    description: SQL Warehouse ID for running SQL tasks (get from SQL Warehouses page)
+
+targets:
+  dev:
+    # Development mode: resources prefixed with '[dev username]', schedules paused
+    mode: development
+    default: true
+
+    # Disable source-linked deployment for Databricks Apps compatibility
+    # Apps require actual file copies, not symlinks
+    presets:
+      source_linked_deployment: false
+
+    variables:
+      catalog: ignite_2025
+
+      # Schema: Dynamic user detection (or hardcode if auto-detection fails)
+      schema: ${workspace.current_user.short_name}
+      # schema: your_username
+
+      source_catalog_schema: samples.wanderbricks
+
+      warehouse_id: PLACEHOLDER_WAREHOUSE_ID  # Auto-configured by setup

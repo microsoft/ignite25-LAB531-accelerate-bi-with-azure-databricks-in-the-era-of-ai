@@ -1,0 +1,17 @@
+# Databricks Apps Configuration
+# Authentication: Service Principal - app uses its own service principal credentials
+
+command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# Note: DATABRICKS_HOST and DATABRICKS_TOKEN are automatically injected by Databricks Apps
+# No need to set them here - the platform provides them
+
+env:
+  # SQL Warehouse ID - auto-configured by setup notebook (Step 11)
+  # Bundle variables not supported in app.yaml, so direct value injection is used
+  - name: "DATABRICKS_WAREHOUSE_ID"
+    value: "PLACEHOLDER_WAREHOUSE_ID"
+
+  # Data source location
+  - name: "DATABRICKS_CATALOG_SCHEMA"
+    value: "samples.wanderbricks"

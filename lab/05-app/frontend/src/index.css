@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Brand Colors */
+  --primary: #ff5a5f; /* Coral - Main CTAs, links, brand elements */
+  --primary-hover: #e8484d; /* Hover states */
+  --primary-light: #ffebec; /* Backgrounds and subtle highlights */
+  
+  /* Secondary Brand Colors */
+  --secondary: #00a699; /* Teal - Secondary actions, complementary elements */
+  --secondary-hover: #008489; /* Hover states */
+  --secondary-light: #e6f7f6; /* Backgrounds */
+  
+  /* Interactive States */
+  --success: #00a699; /* Success indicators */
+  --warning: #ffb400; /* Warning states */
+  --destructive: #c13515; /* Error states and destructive actions */
+  
+  /* Neutral Colors */
+  --foreground: #222222; /* Primary text */
+  --muted-foreground: #717171; /* Secondary text */
+  --background: #ffffff; /* Main background */
+  --muted: #f7f7f7; /* Subtle backgrounds */
+  --border: #dddddd; /* Border colors */
+  
+  /* Border Radius System */
+  --radius-sm: 8px; /* Small elements (badges, tags) */
+  --radius: 12px; /* Default radius (buttons, inputs) */
+  --radius-lg: 16px; /* Cards, modals */
+  --radius-xl: 24px; /* Hero sections, large containers */
+  
+  /* Shadow System */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle elevation */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Default */
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Cards */
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Modals */
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Large elements */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Typography Scale */
+  h1 {
+    @apply text-4xl font-bold leading-tight tracking-tight;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  h2 {
+    @apply text-3xl font-bold leading-snug tracking-tight;
+    font-size: 1.875rem;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold leading-normal tracking-tight;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+  }
+  
+  h4 {
+    @apply text-xl font-semibold leading-normal;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  
+  p {
+    @apply text-base font-normal leading-relaxed;
+    line-height: 1.6;
+  }
+  
+  label {
+    @apply text-sm font-semibold leading-normal uppercase tracking-wide;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Default Transition */
+  button, .card, .interactive {
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, 
+                border-color 0.2s ease-in-out, transform 0.2s ease-in-out, 
+                box-shadow 0.2s ease-in-out;
+  }
+  
+  /* Glass morphism effects */
+  .glass {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
+  
+  /* Hero text gradient */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
+
+@layer components {
+  /* Custom component classes */
+  .text-hero {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+  
+  .text-subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  .text-caption {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Hover scale effects */
+  .hover-scale {
+    @apply hover:scale-105 transform transition-all duration-200 ease-in-out;
+  }
+  
+  .hover-scale-lg {
+    @apply hover:scale-110 transform transition-all duration-300 ease-in-out;
+  }
+  
+  /* Card styles */
+  .card-modern {
+    @apply bg-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 ease-in-out;
+  }
+}
+
+@layer utilities {
+  /* Custom utility classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Line clamping utilities */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}

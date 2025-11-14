@@ -1,0 +1,40 @@
+# Main workshop job: ETL pipeline + governance views
+
+resources:
+  jobs:
+    wanderbricks_lab_job:
+      name: wanderbricks_lab_job
+
+      # trigger:
+        # Trigger disabled - job runs manually only
+        # Uncomment below to enable daily automatic runs
+        # periodic:
+        #   interval: 1
+        #   unit: DAYS
+
+      #email_notifications:
+      #  on_failure:
+      #    - your_email@example.com
+
+      tasks:
+        # Task 1: Run the DLT ETL pipeline with full refresh
+        - task_key: refresh_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.wanderbricks_lab_etl.id}
+            full_refresh: true
+
+        # Task 2: Create/refresh Databricks Metric View
+        - task_key: create_metric_view
+          depends_on:
+            - task_key: refresh_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              source: WORKSPACE
+              path: ${workspace.file_path}/lab/02-Data-governance/create_bookings_metrics_view.sql
+            parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+
+
+
