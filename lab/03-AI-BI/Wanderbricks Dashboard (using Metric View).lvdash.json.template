@@ -1,0 +1,2647 @@
+{
+  "datasets": [
+    {
+      "name": "c8d57359",
+      "displayName": "wanderbricks_bookings_metrics",
+      "asset_name": "{{CATALOG}}.{{SCHEMA}}.wanderbricks_bookings_metrics"
+    }
+  ],
+  "pages": [
+    {
+      "name": "a075505d",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "edc69df1",
+            "queries": [
+              {
+                "name": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aabbe4b317619a9c21ccf001344d_Property Country",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Property Country",
+                      "expression": "`Property Country`"
+                    },
+                    {
+                      "name": "Property Country_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Property Country",
+                    "queryName": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aabbe4b317619a9c21ccf001344d_Property Country"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "9b593d99",
+            "queries": [
+              {
+                "name": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_Property City",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Property City",
+                      "expression": "`Property City`"
+                    },
+                    {
+                      "name": "Property City_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Property City",
+                    "queryName": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_Property City"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 4,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "841fdacf",
+            "queries": [
+              {
+                "name": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_Booking Date",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Booking Date",
+                      "expression": "`Booking Date`"
+                    },
+                    {
+                      "name": "Booking Date_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-date-range-picker",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Booking Date",
+                    "queryName": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_Booking Date"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "eff0e919",
+            "queries": [
+              {
+                "name": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_User Type",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "User Type",
+                      "expression": "`User Type`"
+                    },
+                    {
+                      "name": "User Type_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "User Type",
+                    "queryName": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_User Type"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "02cca3c1",
+            "queries": [
+              {
+                "name": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_Booking Status",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Booking Status",
+                      "expression": "`Booking Status`"
+                    },
+                    {
+                      "name": "Booking Status_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Booking Status",
+                    "queryName": "dashboards/01f0aab198a11fc5b0432d601095b445/datasets/01f0aab2046a106cb9bb670e74f4ae89_Booking Status"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 8,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    },
+    {
+      "name": "page1",
+      "displayName": "Headlines",
+      "layout": [
+        {
+          "widget": {
+            "name": "bar_chart1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Booking Status",
+                      "expression": "`Booking Status`"
+                    },
+                    {
+                      "name": "daily(Booking Date)",
+                      "expression": "DATE_TRUNC(\"DAY\", `Booking Date`)"
+                    },
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "area",
+              "encodings": {
+                "x": {
+                  "fieldName": "daily(Booking Date)",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "Booking Date"
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Count of Records"
+                },
+                "color": {
+                  "fieldName": "Booking Status",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Booking Status"
+                }
+              },
+              "frame": {
+                "title": "Total Num Bookings",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 4,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "table1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Booking ID",
+                      "expression": "`Booking ID`"
+                    },
+                    {
+                      "name": "Booking Status",
+                      "expression": "`Booking Status`"
+                    },
+                    {
+                      "name": "Booking Date",
+                      "expression": "`Booking Date`"
+                    },
+                    {
+                      "name": "User ID",
+                      "expression": "`User ID`"
+                    },
+                    {
+                      "name": "User Email",
+                      "expression": "`User Email`"
+                    },
+                    {
+                      "name": "User Name",
+                      "expression": "`User Name`"
+                    },
+                    {
+                      "name": "User Type",
+                      "expression": "`User Type`"
+                    },
+                    {
+                      "name": "User Company Name",
+                      "expression": "`User Company Name`"
+                    },
+                    {
+                      "name": "Property Title",
+                      "expression": "`Property Title`"
+                    },
+                    {
+                      "name": "Property Type",
+                      "expression": "`Property Type`"
+                    },
+                    {
+                      "name": "Property Max Guests",
+                      "expression": "`Property Max Guests`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "Booking ID",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100000,
+                    "title": "Booking ID",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "Booking Status",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100004,
+                    "title": "Booking Status",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "Booking Date",
+                    "dateTimeFormat": "DD/MM/YYYY",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "date",
+                    "displayAs": "datetime",
+                    "visible": true,
+                    "order": 100005,
+                    "title": "Booking Date",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "User ID",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100007,
+                    "title": "User ID",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "User Email",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100008,
+                    "title": "User Email",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "User Name",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100009,
+                    "title": "User Name",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "User Type",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100011,
+                    "title": "User Type",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "User Company Name",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100013,
+                    "title": "User Company Name",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "Property Title",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100017,
+                    "title": "Property Title",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "Property Type",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100019,
+                    "title": "Property Type",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "Property Max Guests",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100020,
+                    "title": "Property Max Guests",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "dateTimeFormat": "DD/MM/YYYY",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Date",
+                  "type": "date",
+                  "displayAs": "datetime",
+                  "order": 100001,
+                  "title": "Check-In Date",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property ID",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100014,
+                  "title": "Property ID",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host ID",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100015,
+                  "title": "Host ID",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Payment Status",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100002,
+                  "title": "Payment Status",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Nights Stayed",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100003,
+                  "title": "Nights Stayed",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Guest Count",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100004,
+                  "title": "Guest Count",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Is Weekend Check-in",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100005,
+                  "title": "Is Weekend Check-in",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "User Is Business",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100010,
+                  "title": "User Is Business",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Customer Country",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100012,
+                  "title": "Customer Country",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Customer Region",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100013,
+                  "title": "Customer Region",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Customer Segment",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100014,
+                  "title": "Customer Segment",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "dateTimeFormat": "DD/MM/YYYY",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Customer Since",
+                  "type": "date",
+                  "displayAs": "datetime",
+                  "order": 100015,
+                  "title": "Customer Since",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Base Price",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100019,
+                  "title": "Property Base Price",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Bedrooms",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100021,
+                  "title": "Property Bedrooms",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Bathrooms",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100022,
+                  "title": "Property Bathrooms",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property City",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100023,
+                  "title": "Property City",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Country",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100024,
+                  "title": "Property Country",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Region",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100025,
+                  "title": "Property Region",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property State Or Province",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100026,
+                  "title": "Property State Or Province",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Total Amenities",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100027,
+                  "title": "Property Total Amenities",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Has WiFi",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100028,
+                  "title": "Property Has WiFi",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Has Kitchen",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100029,
+                  "title": "Property Has Kitchen",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Has Pool",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100030,
+                  "title": "Property Has Pool",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Has Parking",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100031,
+                  "title": "Property Has Parking",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Has Air Conditioning",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100032,
+                  "title": "Property Has Air Conditioning",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Amenity Tier",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100033,
+                  "title": "Property Amenity Tier",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Price Tier",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100034,
+                  "title": "Property Price Tier",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Property Size Category",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100035,
+                  "title": "Property Size Category",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Name",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100037,
+                  "title": "Host Name",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Country",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100038,
+                  "title": "Host Country",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Region",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100039,
+                  "title": "Host Region",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Rating",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100040,
+                  "title": "Host Rating",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Is Verified",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100041,
+                  "title": "Host Is Verified",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Has Staff",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100042,
+                  "title": "Host Has Staff",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Management Style",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100043,
+                  "title": "Host Management Style",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Tier",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100044,
+                  "title": "Host Tier",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Host Experience Level",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100045,
+                  "title": "Host Experience Level",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Year",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100047,
+                  "title": "Check-In Year",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Quarter",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100048,
+                  "title": "Check-In Quarter",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Month",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100049,
+                  "title": "Check-In Month",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Season",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100050,
+                  "title": "Check-In Season",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Day Name",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100051,
+                  "title": "Check-In Day Name",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Is Weekend",
+                  "type": "boolean",
+                  "displayAs": "boolean",
+                  "order": 100052,
+                  "title": "Check-In Is Weekend",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Check-In Fiscal Year",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100053,
+                  "title": "Check-In Fiscal Year",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Booking Year",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100055,
+                  "title": "Booking Year",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Booking Month",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100056,
+                  "title": "Booking Month",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "Booking Season",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100057,
+                  "title": "Booking Season",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 10,
+            "width": 6,
+            "height": 10
+          }
+        },
+        {
+          "widget": {
+            "name": "132f8c9b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(*)",
+                  "displayName": "Count of Records"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total # Bookings"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "f039cfa4",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "measure(Total Num Guests)",
+                      "expression": "MEASURE(`Total Num Guests`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(Total Num Guests)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 2
+                    }
+                  },
+                  "displayName": "Total Num Guests"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total # Guests"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "d3df3615",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "measure(Total Revenue)",
+                      "expression": "MEASURE(`Total Revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(Total Revenue)",
+                  "format": {
+                    "type": "number-currency",
+                    "currencyCode": "USD",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 2
+                    }
+                  },
+                  "displayName": "Total Revenue"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total Booking $"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "53204947",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "measure(Avg Duration of Stay)",
+                      "expression": "MEASURE(`Avg Duration of Stay`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(Avg Duration of Stay)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 2
+                    }
+                  },
+                  "displayName": "Avg Duration of Stay"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Avg Duration of Stay"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "142ace77",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "measure(Avg Num Guests)",
+                      "expression": "MEASURE(`Avg Num Guests`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(Avg Num Guests)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 2
+                    }
+                  },
+                  "displayName": "Avg Num Guests"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Avg # Guests"
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "b269acd4",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "User Type",
+                      "expression": "`User Type`"
+                    },
+                    {
+                      "name": "weekly(Booking Date)",
+                      "expression": "DATE_TRUNC(\"WEEK\", `Booking Date`)"
+                    },
+                    {
+                      "name": "measure(Avg Duration of Stay)",
+                      "expression": "MEASURE(`Avg Duration of Stay`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "weekly(Booking Date)",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "Booking Date"
+                },
+                "y": {
+                  "fieldName": "measure(Avg Duration of Stay)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Avg Duration of Stay"
+                },
+                "color": {
+                  "fieldName": "User Type",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "User Type"
+                }
+              },
+              "frame": {
+                "title": "Avg Duration of Stay (Days)",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 4,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "256f2e95",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "measure(Total Num Active Hosts)",
+                      "expression": "MEASURE(`Total Num Active Hosts`)"
+                    },
+                    {
+                      "name": "Property Type",
+                      "expression": "`Property Type`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "measure(Total Num Active Hosts)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total Num Active Hosts"
+                },
+                "color": {
+                  "fieldName": "Property Type",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "legend": {
+                    "hide": true
+                  },
+                  "displayName": "Property Type"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Booking $ by Prop Type"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 2,
+            "width": 1,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "43f6d491",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "measure(Total Revenue)",
+                      "expression": "MEASURE(`Total Revenue`)"
+                    },
+                    {
+                      "name": "User Type",
+                      "expression": "`User Type`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "measure(Total Revenue)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total Revenue"
+                },
+                "color": {
+                  "fieldName": "User Type",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "legend": {
+                    "hide": true
+                  },
+                  "displayName": "User Type"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Booking $ by User Type"
+              }
+            }
+          },
+          "position": {
+            "x": 5,
+            "y": 2,
+            "width": 1,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "f15d78cc",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Guests Count",
+                      "expression": "`Guests Count`"
+                    },
+                    {
+                      "name": "min(Property Max Guests)",
+                      "expression": "MIN(`Property Max Guests`)"
+                    },
+                    {
+                      "name": "q1(Property Max Guests)",
+                      "expression": "PERCENTILE(`Property Max Guests`, 0.25)"
+                    },
+                    {
+                      "name": "median(Property Max Guests)",
+                      "expression": "MEDIAN(`Property Max Guests`)"
+                    },
+                    {
+                      "name": "q3(Property Max Guests)",
+                      "expression": "PERCENTILE(`Property Max Guests`, 0.75)"
+                    },
+                    {
+                      "name": "max(Property Max Guests)",
+                      "expression": "MAX(`Property Max Guests`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "box",
+              "encodings": {
+                "x": {
+                  "fieldName": "Guests Count",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Guests Count"
+                },
+                "y": {
+                  "whiskerStart": {
+                    "fieldName": "min(Property Max Guests)"
+                  },
+                  "boxStart": {
+                    "fieldName": "q1(Property Max Guests)"
+                  },
+                  "boxMid": {
+                    "fieldName": "median(Property Max Guests)"
+                  },
+                  "boxEnd": {
+                    "fieldName": "q3(Property Max Guests)"
+                  },
+                  "whiskerEnd": {
+                    "fieldName": "max(Property Max Guests)"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Guest Count by Max Guests"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 6,
+            "width": 2,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "617c1c92",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "measure(Avg Host Rating)",
+                      "expression": "MEASURE(`Avg Host Rating`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(Avg Host Rating)",
+                  "displayName": "Avg Host Rating"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Avg Host Rating"
+              }
+            }
+          },
+          "position": {
+            "x": 5,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "d435a4d6",
+      "displayName": "Geography",
+      "layout": [
+        {
+          "widget": {
+            "name": "c1eb41f1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "Destination Country Code",
+                      "expression": "`Destination Country Code`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "choropleth-map",
+              "encodings": {
+                "color": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "greenblue"
+                    }
+                  },
+                  "displayName": "Count of Records"
+                },
+                "region": {
+                  "regionType": "mapbox-v4-admin",
+                  "admin0": {
+                    "fieldName": "Destination Country Code",
+                    "type": "field",
+                    "geographicRole": "admin0-unit-code",
+                    "displayName": "Destination Country Code"
+                  }
+                }
+              },
+              "mark": {
+                "opacity": 0.82
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Destinations by Country"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 7
+          }
+        },
+        {
+          "widget": {
+            "name": "59eea9f1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "Property Country",
+                      "expression": "`Property Country`"
+                    },
+                    {
+                      "name": "measure(7 Day Trailing Booking Revenue)",
+                      "expression": "MEASURE(`7 Day Trailing Booking Revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Property Country",
+                  "scale": {
+                    "type": "categorical",
+                    "categorySize": {
+                      "type": "number-of-categories",
+                      "number": 7
+                    },
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  }
+                },
+                "y": {
+                  "fieldName": "measure(7 Day Trailing Booking Revenue)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 7
+          }
+        },
+        {
+          "widget": {
+            "name": "8a209d4f",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c8d57359",
+                  "fields": [
+                    {
+                      "name": "User Type",
+                      "expression": "`User Type`"
+                    },
+                    {
+                      "name": "Property Latitude",
+                      "expression": "`Property Latitude`"
+                    },
+                    {
+                      "name": "Property Longitude",
+                      "expression": "`Property Longitude`"
+                    },
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "symbol-map",
+              "encodings": {
+                "coordinates": {
+                  "latitude": {
+                    "fieldName": "Property Latitude",
+                    "displayName": "Property Latitude"
+                  },
+                  "longitude": {
+                    "fieldName": "Property Longitude",
+                    "displayName": "Property Longitude"
+                  }
+                },
+                "color": {
+                  "fieldName": "User Type",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "User Type"
+                },
+                "size": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Count of Records"
+                }
+              },
+              "mark": {
+                "size": -2.2
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 3,
+            "height": 7
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "canvasBackgroundColor": {
+        "light": "#F6FAFB",
+        "dark": "#1B1F23"
+      },
+      "widgetBackgroundColor": {
+        "light": "#FFFFFF",
+        "dark": "#2A2F35"
+      },
+      "widgetBorderColor": {
+        "light": "#D7E1E9",
+        "dark": "#3C444C"
+      },
+      "fontColor": {
+        "light": "#374151",
+        "dark": "#E4E9EE"
+      },
+      "selectionColor": {
+        "light": "#5FA8D3",
+        "dark": "#5FA8D3"
+      },
+      "visualizationColors": [
+        "#5FA8D3",
+        "#70BEE1",
+        "#89CCE7",
+        "#A1DAEC",
+        "#B3E6DC",
+        "#89C7A8",
+        "#6EAD80",
+        "#589F60",
+        "#478743",
+        "#356C2A"
+      ],
+      "widgetHeaderAlignment": "LEFT"
+    },
+    "genieSpace": {
+      "isEnabled": false,
+      "overrideId": "01f0aaeaca051fb8b6873bddfd90a8f9"
+    }
+  }
+}

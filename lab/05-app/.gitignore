@@ -1,0 +1,27 @@
+# Python virtual environments
+backend/venv/
+**/venv/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+.env.development
+*.pem
+*.key
+*.crt
+
+
+
+
+
+
+
+
+
+

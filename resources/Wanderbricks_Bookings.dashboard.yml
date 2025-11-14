@@ -1,0 +1,16 @@
+# Wanderbricks Analytics Dashboard
+# This dashboard is deployed as part of the bundle and uses the metric view
+
+resources:
+  dashboards:
+    wanderbricks_analytics_dashboard:
+      display_name: "Wanderbricks Bookings Dashboard"
+      warehouse_id: ${var.warehouse_id}
+      
+      # Dashboard will be imported from the Lakeview JSON file
+      # Path is relative to this YAML file location (resources/)
+      # To reach lab/03-AI-BI/ from resources/, go up one level then into lab/03-AI-BI/
+      file_path: ../lab/03-AI-BI/Wanderbricks Dashboard (using Metric View).lvdash.json
+      
+      # Embed credentials for automated refresh
+      embed_credentials: true
