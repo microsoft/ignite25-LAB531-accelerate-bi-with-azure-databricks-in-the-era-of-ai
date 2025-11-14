@@ -4,6 +4,6 @@ pydantic==2.5.1
 pydantic-settings==2.1.0
 databricks-sql-connector==3.0.0
 # AI Assistant dependencies
-requests==2.31.0
+requests==2.32.4
 backoff==2.2.1
 pandas>=2.1.0  # Use latest compatible version for Python 3.12
