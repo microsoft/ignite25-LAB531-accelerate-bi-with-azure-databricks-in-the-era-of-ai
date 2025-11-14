@@ -4,10 +4,8 @@
 
 # [Microsoft Ignite 2025](https://ignite.microsoft.com)
 
-## 🔥LAB531: Accelerate BI with Azure Databricks in the Era of AI
+## LAB531: Accelerate BI with Azure Databricks in the Era of AI
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://aka.ms/AIFoundryDiscord-Ignite25)
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=adff2f&logoColor=fff)](https://aka.ms/AIFoundryForum-Ignite25)
 [![Databricks Community](https://img.shields.io/badge/Databricks-Community-FF3621?style=for-the-badge&logo=databricks&logoColor=white)](https://community.databricks.com/)
 
 ### Session Description
@@ -18,7 +16,7 @@ You'll create real-time data pipelines with Lakeflow (Databricks' declarative pi
 
 This beginner-friendly workshop requires no local installation—everything runs in your browser using Azure Databricks serverless compute and SQL warehouses.
 
-### 🧠 Learning Outcomes
+###  Learning Outcomes
 
 By the end of this session, learners will be able to:
 
@@ -30,7 +28,7 @@ By the end of this session, learners will be able to:
 - Deploy full-stack applications on Databricks Apps with FastAPI and React
 - Apply medallion architecture patterns (Bronze/Silver/Gold) for lakehouse data organization
 
-### 💻 Technologies Used
+###  Technologies Used
 
 1. **Azure Databricks** - Unified analytics platform
 2. **Unity Catalog** - Data governance and security
@@ -43,7 +41,7 @@ By the end of this session, learners will be able to:
 9. **Delta Lake** - Open table format for lakehouse
 10. **Apache Spark** - Distributed data processing
 
-### 🌟 Microsoft Learn MCP Server
+###  Microsoft Learn MCP Server
 
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Microsoft_Docs_MCP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=microsoft.docs.mcp&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)
 
@@ -58,7 +56,6 @@ For more information, setup instructions for other dev clients, and to post comm
 | Resources          | Links                             | Description        |
 |:-------------------|:----------------------------------|:-------------------|
 | Ignite 2025 Next Steps | [https://aka.ms/Ignite25-Next-Steps](https://aka.ms/Ignite25-Next-Steps?ocid=ignite25_nextsteps_cnl) | Links to all repos for Ignite 2025 Sessions |
-| Azure AI Foundry Community Discord | [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://aka.ms/AIFoundryDiscord-Ignite25)| Connect with the Azure AI Foundry Community! |
 | Learn at Ignite | [https://aka.ms/LearnAtIgnite](https://aka.ms/LearnAtIgnite?ocid=ignite25_nextsteps_github_cnl) | Continue learning on Microsoft Learn |
 | Databricks Academy | [https://www.databricks.com/learn](https://www.databricks.com/learn) | Free online training courses |
 | Databricks Community | [https://community.databricks.com/](https://community.databricks.com/) | Ask questions and share knowledge |
@@ -167,11 +164,11 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
 6. Scroll to the **final output** (Step 10)
 
 **What this creates:**
-- 📁 Catalog: `ignite_2025`
-- 📂 Your personal schema: `ignite_2025.<your_username>`
-- 💾 Volume: `ignite_2025.<your_username>.file_data`
-- 🔌 SQL Warehouse: `Serverless Starter Warehouse` - 2X-Small (auto-created if needed)
-- 📝 Deployment guide notebook: `02_deploy_lab.py` (auto-generated with your repo path, works with Serverless)
+-  Catalog: `ignite_2025`
+-  Your personal schema: `ignite_2025.<your_username>`
+-  Volume: `ignite_2025.<your_username>.file_data`
+-  SQL Warehouse: `Serverless Starter Warehouse` - 2X-Small (auto-created if needed)
+-  Deployment guide notebook: `02_deploy_lab.py` (auto-generated with your repo path, works with Serverless)
 
 **Success Checkpoint:**
 - All cells complete with green checkmarks
@@ -362,23 +359,6 @@ See [common_functions.py](lab/01-Data-Transformation/utilities/common_functions.
 
 - Pipeline completes with all tables green
 - Can query 5 dimensions + 1 fact table in Data Explorer
-
-#### Files Reference
-
-- **Transformations:**
-  - `lab/01-Data-Transformation/transformations/dim_customer.py`
-  - `lab/01-Data-Transformation/transformations/dim_property.py`
-  - `lab/01-Data-Transformation/transformations/dim_host.py`
-  - `lab/01-Data-Transformation/transformations/dim_employee.py`
-  - `lab/01-Data-Transformation/transformations/dim_date.py`
-  - `lab/01-Data-Transformation/transformations/fact_bookings.py`
-
-- **Views:**
-  - `lab/01-Data-Transformation/transformations/booking_insights.sql` - Denormalized view
-  - `lab/01-Data-Transformation/transformations/overlapping_bookings.sql` - Data quality
-
-- **Utilities:**
-  - `lab/01-Data-Transformation/utilities/common_functions.py`
 
 ---
 
@@ -714,47 +694,11 @@ databricks bundle run -t dev wanderbricks_booking_app
    - Try the AI assistant
    - View dashboard analytics
 
-#### Local Development (Optional)
-
-To develop locally:
-
-```bash
-cd lab/05-app
-./start-dev.sh
-```
-
-This starts FastAPI on `http://localhost:8000` with hot reload.
-
-**To modify frontend:**
-```bash
-cd frontend
-npm install
-npm run dev  # Starts Vite dev server on port 5173
-```
 
 #### Success Criteria
 
 - App deploys and property search loads data
 - Dashboard shows metrics
-
-#### Files Reference
-
-**Backend:**
-- `lab/05-app/backend/main.py` - FastAPI entry point
-- `lab/05-app/backend/app/` - Application modules
-- `lab/05-app/backend/genie/` - Genie integration
-- `lab/05-app/backend/sql/` - Dashboard queries
-- `lab/05-app/backend/requirements.txt` - Python deps
-
-**Frontend:**
-- `lab/05-app/frontend/src/` - React application
-- `lab/05-app/frontend/package.json` - Node deps
-
-**Deployment:**
-- `resources/wanderbricks_booking_app.app.yml` - App bundle config
-
-**Documentation:**
-- `lab/05-app/README.md` - Detailed setup guide
 
 ---
 
