@@ -1,0 +1,38 @@
+# The main pipeline for wanderbricks_lab
+
+resources:
+  pipelines:
+    wanderbricks_lab_etl:
+      name: wanderbricks_lab_etl
+      # Note: catalog and schema are inherited from databricks.yml variables
+      # To change these values, edit databricks.yml (lines 34-40)
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      continuous: true  # Run in continuous mode to automatically process new data
+
+      # Set root_path to enable proper Python module resolution
+      # This makes the utilities folder importable in transformations
+      root_path: ${workspace.file_path}/lab/01-Data-Transformation
+
+      # Publish event log to Unity Catalog for enhanced observability
+      event_log:
+        catalog: ${var.catalog}
+        schema: ${var.schema}
+        name: event_log_wanderbricks_lab_etl
+
+      configuration:
+        # Target catalog and schema - make them available to Python code via spark.conf
+        catalog: ${var.catalog}
+        schema: ${var.schema}
+
+        # Source configuration - where to read raw data from
+        # Users can override this in the pipeline UI if needed
+        source_catalog_schema: samples.wanderbricks
+        pipelines.streamingFlowReadOptionsEnabled: "true"
+
+      libraries:
+        - glob:
+            include: ../lab/01-Data-Transformation/transformations/**
+        - glob:
+            include: ../lab/01-Data-Transformation/utilities/**
