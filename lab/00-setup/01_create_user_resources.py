@@ -28,9 +28,10 @@ if spark is None:
 current_user_email = spark.sql("SELECT current_user()").collect()[0][0]
 print(f"Current user: {current_user_email}")
 
-# Convert email to schema name (replace . with _ and remove domain)
+# Convert email to schema name (replace . and - with _ and remove domain)
 # Example: saurabh.shukla@databricks.com → saurabh_shukla
-current_user_schema = current_user_email.split("@")[0].replace(".", "_")
+# Example: user1-56655733@domain.com → user1_56655733
+current_user_schema = current_user_email.split("@")[0].replace(".", "_").replace("-", "_").lower()
 print(f"Schema name: {current_user_schema}")
 
 # COMMAND ----------
