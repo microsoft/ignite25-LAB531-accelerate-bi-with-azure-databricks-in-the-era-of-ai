@@ -469,68 +469,30 @@ print("\n" + "=" * 80)
 print("📝 GENERATING DEPLOYMENT COMMAND GUIDE")
 print("=" * 80)
 
-# Define output path for deployment guide notebook
-deploy_guide_path = f"{repo_root}/lab/00-setup/02_deploy_lab.py"
-
-# Build Databricks notebook in source format (.py)
-notebook_content = """# Databricks notebook source
-# MAGIC %md
-# MAGIC # Deployment Commands
-# MAGIC
-# MAGIC **How to use Web Terminal:**
-# MAGIC 1. Connect to Serverless
-# MAGIC 2. View → Cluster Tools → Web Terminal
-# MAGIC 3. Run commands below
-# MAGIC
-# MAGIC ---
-# MAGIC
-# MAGIC ## Deploy Bundle + App
-# MAGIC
-# MAGIC ```bash
-# MAGIC cd """ + repo_root + """
-# MAGIC
-# MAGIC # Deploy bundle (Pipeline, Job, Dashboard)
-# MAGIC databricks bundle deploy --target dev
-# MAGIC
-# MAGIC # Deploy app (run after bundle completes)
-# MAGIC databricks bundle run -t dev wanderbricks_booking_app
-# MAGIC ```
-# MAGIC
-# MAGIC ---
-# MAGIC
-# MAGIC ## Alternative: UI Deployment
-# MAGIC
-# MAGIC **Deploy Bundle:**
-# MAGIC - Repos folder → **⋮** menu → Databricks Asset Bundles → Deploy → Choose `dev`
-# MAGIC
-# MAGIC **Run Job:**
-# MAGIC - Workflows → `[dev username] wanderbricks_lab_job` → Run Now
-# MAGIC
-# MAGIC ---
-# MAGIC
-# MAGIC ## Troubleshooting
-# MAGIC
-# MAGIC **Clean state (if deployment fails):**
-# MAGIC ```bash
-# MAGIC cd """ + repo_root + """
-# MAGIC rm -rf .databricks/bundle/dev
-# MAGIC databricks bundle deploy --target dev
-# MAGIC ```
-"""
+# Define paths for deployment guide notebook
+deploy_guide_template = f"{repo_root}/lab/00-setup/02_deploy_lab.py"
+deploy_guide_output = f"{repo_root}/lab/00-setup/02_deploy_lab.py"
 
 try:
-    # Write the deployment guide notebook
-    with open(deploy_guide_path, 'w') as f:
-        f.write(notebook_content)
+    # Read the template notebook
+    with open(deploy_guide_template, 'r') as f:
+        notebook_content = f.read()
 
-    print(f"✅ Deployment guide notebook generated successfully")
-    print(f"   Location: {deploy_guide_path}")
+    # Replace placeholder with actual repo path
+    personalized_content = notebook_content.replace("{repo_root}", repo_root)
+
+    # Write the personalized notebook (overwrite template)
+    with open(deploy_guide_output, 'w') as f:
+        f.write(personalized_content)
+
+    print(f"✅ Deployment guide notebook personalized successfully")
+    print(f"   Location: {deploy_guide_output}")
     print(f"   Format:   Databricks Source (.py)")
     print(f"\n   📓 Open this notebook in Databricks to see your personalized deployment commands!")
-    print(f"   ✨ Compatible with Serverless compute!")
+    print(f"   ✨ Template updated with your repo path!")
 
 except Exception as e:
-    print(f"⚠️  Could not generate deployment guide")
+    print(f"⚠️  Could not personalize deployment guide")
     print(f"   Error: {str(e)}")
     print(f"   This is optional - you can still deploy using the UI (see README.md)")
 
