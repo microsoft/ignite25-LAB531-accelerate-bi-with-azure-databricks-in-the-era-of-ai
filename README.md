@@ -82,7 +82,7 @@ By the end of this session, learners will be able to:
 0:15 - 0:40  │ Lab 01: Data Transformation with Lakeflow Pipeline
 0:40 - 0:50  │ Lab 02: Data Governance with Unity Catalog
 0:50 - 1:00  │ Lab 03: Intelligent analytics with AI/BI dashboards & Genie
-1:00 - 1:10  │ Lab 04: Power BI: Connect to warehouse, quick report
+1:00 - 1:10  │ Lab 04: Publish data from Azure Databricks to Power BI service
 1:10 - 1:20  │ Lab 05: Databricks App: Deploy & Explore app
 1:20 - 1:30  │ Wrap-up, Q&A, next steps
 ```
@@ -211,15 +211,13 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
 1. Click **Compute** in the left sidebar
 2. Go to **Apps** tab
 3. Find `wanderbricks-booking-app`
-4. Click the blue **Start** button
-
-   ![Start App](img/app_setup1.png)
-
-5. Click **Deploy** button
-6. Select the `backend` folder when prompted
+   ![Find App](img/app_setup1.png)
+4. Click the blue **Start** button [ This process may take 2 to 3 minutes. ]
+5. Click **Deploy** button and select the `backend` folder when prompted
 
    ![Select Backend Folder](img/app_setup2.png)
 
+   ![deploy](img/app_setup3.png)
 7. Wait for deployment to complete
 
 **Access your app:**
