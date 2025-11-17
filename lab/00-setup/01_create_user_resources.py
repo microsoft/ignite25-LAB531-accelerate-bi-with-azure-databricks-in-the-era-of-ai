@@ -466,54 +466,114 @@ print("=" * 80)
 # COMMAND ----------
 
 print("\n" + "=" * 80)
-print("📝 PERSONALIZING DEPLOYMENT COMMAND GUIDE")
+print("📝 GENERATING DEPLOYMENT COMMAND GUIDE")
 print("=" * 80)
 
 # Define path for deployment guide notebook
 deploy_guide_path = f"{repo_root}/lab/00-setup/02_deploy_lab.ipynb"
 
+# Build complete Jupyter notebook structure
+notebook_json = {
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# Deployment Commands\n",
+                "\n",
+                "**How to use Web Terminal:**\n",
+                "1. Connect to Serverless\n",
+                "2. View → Cluster Tools → Web Terminal\n",
+                "3. Run commands below\n",
+                "\n",
+                "---"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## Deploy Bundle + App\n",
+                "\n",
+                "```bash\n",
+                f"cd {repo_root}\n",
+                "\n",
+                "# Deploy bundle (Pipeline, Job, Dashboard)\n",
+                "databricks bundle deploy --target dev\n",
+                "\n",
+                "# Deploy app (run after bundle completes)\n",
+                "databricks bundle run -t dev wanderbricks_booking_app\n",
+                "```\n",
+                "\n",
+                "---"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## Alternative: UI Deployment\n",
+                "\n",
+                "**Deploy Bundle:**\n",
+                "- Repos folder → **⋮** menu → Databricks Asset Bundles → Deploy → Choose `dev`\n",
+                "\n",
+                "**Run Job:**\n",
+                "- Workflows → `[dev username] wanderbricks_lab_job` → Run Now\n",
+                "\n",
+                "---"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## Troubleshooting\n",
+                "\n",
+                "**Clean state (if deployment fails):**\n",
+                "```bash\n",
+                f"cd {repo_root}\n",
+                "rm -rf .databricks/bundle/dev\n",
+                "databricks bundle deploy --target dev\n",
+                "```"
+            ]
+        }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 3",
+            "language": "python",
+            "name": "python3"
+        },
+        "language_info": {
+            "codemirror_mode": {
+                "name": "ipython",
+                "version": 3
+            },
+            "file_extension": ".py",
+            "mimetype": "text/x-python",
+            "name": "python",
+            "nbconvert_exporter": "python",
+            "pygments_lexer": "ipython3",
+            "version": "3.11.0"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 5
+}
+
 try:
-    # Read the template notebook (JSON format)
-    with open(deploy_guide_path, 'r') as f:
-        notebook_json = json.load(f)
-
-    # Create personalized deployment commands cell
-    deployment_cell = {
-        "cell_type": "markdown",
-        "metadata": {},
-        "source": [
-            "## Deploy Bundle + App\n",
-            "\n",
-            "```bash\n",
-            f"cd {repo_root}\n",
-            "\n",
-            "# Deploy bundle (Pipeline, Job, Dashboard)\n",
-            "databricks bundle deploy --target dev\n",
-            "\n",
-            "# Deploy app (run after bundle completes)\n",
-            "databricks bundle run -t dev wanderbricks_booking_app\n",
-            "```\n",
-            "\n",
-            "---\n"
-        ]
-    }
-
-    # Insert the personalized cell after the first cell (index 1)
-    if "cells" in notebook_json:
-        notebook_json["cells"].insert(1, deployment_cell)
-
-    # Write the updated notebook back
+    # Write the deployment guide notebook
     with open(deploy_guide_path, 'w') as f:
         json.dump(notebook_json, f, indent=2)
 
-    print(f"✅ Deployment guide personalized successfully")
+    print(f"✅ Deployment guide notebook generated successfully")
     print(f"   Location: {deploy_guide_path}")
     print(f"   Format:   Jupyter Notebook (.ipynb)")
     print(f"\n   📓 Open this notebook in Databricks to see your personalized deployment commands!")
-    print(f"   ✨ Added cell with your repo path: {repo_root}")
+    print(f"   ✨ Personalized with your repo path: {repo_root}")
 
 except Exception as e:
-    print(f"⚠️  Could not personalize deployment guide")
+    print(f"⚠️  Could not generate deployment guide")
     print(f"   Error: {str(e)}")
     print(f"   This is optional - you can still deploy using the UI (see README.md)")
 
