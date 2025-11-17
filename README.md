@@ -144,7 +144,7 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
 -  Your personal schema: `ignite_2025.<your_username>`
 -  Volume: `ignite_2025.<your_username>.file_data`
 -  SQL Warehouse: `Serverless Starter Warehouse` - 2X-Small (auto-created if needed)
--  Deployment guide notebook: `02_deploy_lab.py` (auto-generated with your repo path, works with Serverless)
+-  Deployment guide notebook: `02_deploy_lab.ipynb` (personalized with your repo path)
 
 **Success Checkpoint:**
 - All cells complete with green checkmarks
@@ -162,7 +162,7 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
 ### Step 3: Deploy Workshop Resources
 
 **Recommended: CLI Method (via Web Terminal)**
-1. Open the auto-generated notebook: `lab/00-setup/02_deploy_lab.py`
+1. Open the auto-generated notebook: `lab/00-setup/02_deploy_lab.ipynb`
 2. Connect to **Serverless** compute
 
    ![Connect to Serverless](img/connect_to_serverless_deploy.png)
@@ -229,7 +229,7 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
 - Step 4 (job) must have completed successfully
 
 **Recommended: CLI Method (via Web Terminal)**
-1. Open the deployment guide: `lab/00-setup/02_deploy_lab.py`
+1. Open the deployment guide: `lab/00-setup/02_deploy_lab.ipynb`
 2. Connect to **Serverless** compute
 3. Go to **View → Cluster Tools → Web Terminal**
 4. Run the app deployment command shown in the notebook

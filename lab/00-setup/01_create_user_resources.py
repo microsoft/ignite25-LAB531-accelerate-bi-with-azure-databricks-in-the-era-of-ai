@@ -466,30 +466,51 @@ print("=" * 80)
 # COMMAND ----------
 
 print("\n" + "=" * 80)
-print("📝 GENERATING DEPLOYMENT COMMAND GUIDE")
+print("📝 PERSONALIZING DEPLOYMENT COMMAND GUIDE")
 print("=" * 80)
 
-# Define paths for deployment guide notebook
-deploy_guide_template = f"{repo_root}/lab/00-setup/02_deploy_lab.py"
-deploy_guide_output = f"{repo_root}/lab/00-setup/02_deploy_lab.py"
+# Define path for deployment guide notebook
+deploy_guide_path = f"{repo_root}/lab/00-setup/02_deploy_lab.ipynb"
 
 try:
-    # Read the template notebook
-    with open(deploy_guide_template, 'r') as f:
-        notebook_content = f.read()
+    # Read the template notebook (JSON format)
+    with open(deploy_guide_path, 'r') as f:
+        notebook_json = json.load(f)
 
-    # Replace placeholder with actual repo path
-    personalized_content = notebook_content.replace("{repo_root}", repo_root)
+    # Create personalized deployment commands cell
+    deployment_cell = {
+        "cell_type": "markdown",
+        "metadata": {},
+        "source": [
+            "## Deploy Bundle + App\n",
+            "\n",
+            "```bash\n",
+            f"cd {repo_root}\n",
+            "\n",
+            "# Deploy bundle (Pipeline, Job, Dashboard)\n",
+            "databricks bundle deploy --target dev\n",
+            "\n",
+            "# Deploy app (run after bundle completes)\n",
+            "databricks bundle run -t dev wanderbricks_booking_app\n",
+            "```\n",
+            "\n",
+            "---\n"
+        ]
+    }
 
-    # Write the personalized notebook (overwrite template)
-    with open(deploy_guide_output, 'w') as f:
-        f.write(personalized_content)
+    # Insert the personalized cell after the first cell (index 1)
+    if "cells" in notebook_json:
+        notebook_json["cells"].insert(1, deployment_cell)
 
-    print(f"✅ Deployment guide notebook personalized successfully")
-    print(f"   Location: {deploy_guide_output}")
-    print(f"   Format:   Databricks Source (.py)")
+    # Write the updated notebook back
+    with open(deploy_guide_path, 'w') as f:
+        json.dump(notebook_json, f, indent=2)
+
+    print(f"✅ Deployment guide personalized successfully")
+    print(f"   Location: {deploy_guide_path}")
+    print(f"   Format:   Jupyter Notebook (.ipynb)")
     print(f"\n   📓 Open this notebook in Databricks to see your personalized deployment commands!")
-    print(f"   ✨ Template updated with your repo path!")
+    print(f"   ✨ Added cell with your repo path: {repo_root}")
 
 except Exception as e:
     print(f"⚠️  Could not personalize deployment guide")
