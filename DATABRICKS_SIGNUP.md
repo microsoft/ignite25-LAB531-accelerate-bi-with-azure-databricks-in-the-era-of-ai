@@ -12,12 +12,12 @@ Go to the Databricks Free Edition signup page:
 
 ## Step 2: Create Your Account
 
-1. **Pick "For work" and "Start trial with express setup".**
+1. **Provide your email address** and Enter Verification Code.
 ![Email Verification](img/create_databricks_free_workspace_2.png)
 
-2. **Provide your email address** and Enter Verification Code.
-   Click **"Create a new account"**
+2. Click **"Create a new account"**
    Fill in your details:
+   - Pick "For work" and "Start trial with express setup"
    - Name your account
    - Where are you located
    - Click **"Continue"**

@@ -24,25 +24,23 @@ Before you begin:
 
 ## Step 1: Create the Genie Space
 
-1. In the Databricks workspace, click **AI/BI** in the left sidebar
-2. Click **Genie Spaces**
-3. Click **Create** (or **New** button in upper-right)
+1. In the Databricks workspace, click **Genie** in the left sidebar
+2. Click **Create** button (or **New** button in upper-right)
 4. **Add data source:**
    - Click **Add data**
    - Navigate to: `ignite_2025` → `<your_schema>` → `wanderbricks_bookings_metrics`
    - Select the metric view
    - Click **Add**
-5. Click **Create**
+5. Optionally update the **Genie space name** to `Wanderbricks Booking Insights`
+6. Click **Create**
 
 ---
 
-## Step 2: Configure Settings
+## Step 2: Update Text Instructions
 
-1. Click **Configure** (gear icon)
-2. Click **Settings** tab
+1. Click **Instructions** tab
+2. Click **Text** tab
 3. Update the following:
-   - **Name:** `Wanderbricks Booking Insights`
-   - **Description:**
      ```
      This Genie space provides comprehensive analytics for the Wanderbricks travel booking platform
      using a metric view with pre-defined dimensions and measures.
@@ -76,31 +74,4 @@ Navigate to your Genie space and try these sample questions:
 ### Advanced Queries
 - "What's the revenue trend for luxury properties by quarter in 2025?"
 - "Show me top 10 destinations by booking count and average revenue"
-
----
-
-## Success Criteria
-
-- Genie space appears in your Genie Spaces list
-- Sample questions return results without errors
-- Generated SQL uses `MEASURE()` function for metrics
-- Can see visualizations and data tables
-
----
-
-## Troubleshooting
-
-**Issue: "No data sources found"**
-- **Fix:** Verify the metric view was created in Lab 02. Run the SQL script again if needed.
-
-**Issue: "Permission denied" when adding data source**
-- **Fix:** Ask instructor to grant SELECT privilege on your schema
-
-**Issue: Generated SQL doesn't use MEASURE() function**
-- **Fix:** This is normal - Genie automatically converts to appropriate SQL. The metric view definitions are still being used.
-
-**Issue: Questions return no data**
-- **Fix:**
-  - Check that your pipeline ran successfully (fact_bookings table has data)
-  - Try filtering to specific time periods: "Show me bookings in July 2025"
 
