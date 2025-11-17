@@ -469,65 +469,125 @@ print("\n" + "=" * 80)
 print("📝 GENERATING DEPLOYMENT COMMAND GUIDE")
 print("=" * 80)
 
-# Define output path for deployment guide notebook
-deploy_guide_path = f"{repo_root}/lab/00-setup/02_deploy_lab.py"
+# Define path for deployment guide notebook
+deploy_guide_path = f"{repo_root}/lab/00-setup/02_deploy_lab.ipynb"
 
-# Build Databricks notebook in source format (.py)
-notebook_content = """# Databricks notebook source
-# MAGIC %md
-# MAGIC # Deployment Commands
-# MAGIC
-# MAGIC **How to use Web Terminal:**
-# MAGIC 1. Connect to Serverless
-# MAGIC 2. View → Cluster Tools → Web Terminal
-# MAGIC 3. Run commands below
-# MAGIC
-# MAGIC ---
-# MAGIC
-# MAGIC ## Deploy Bundle + App
-# MAGIC
-# MAGIC ```bash
-# MAGIC cd """ + repo_root + """
-# MAGIC
-# MAGIC # Deploy bundle (Pipeline, Job, Dashboard)
-# MAGIC databricks bundle deploy --target dev
-# MAGIC
-# MAGIC # Deploy app (run after bundle completes)
-# MAGIC databricks bundle run -t dev wanderbricks_booking_app
-# MAGIC ```
-# MAGIC
-# MAGIC ---
-# MAGIC
-# MAGIC ## Alternative: UI Deployment
-# MAGIC
-# MAGIC **Deploy Bundle:**
-# MAGIC - Repos folder → **⋮** menu → Databricks Asset Bundles → Deploy → Choose `dev`
-# MAGIC
-# MAGIC **Run Job:**
-# MAGIC - Workflows → `[dev username] wanderbricks_lab_job` → Run Now
-# MAGIC
-# MAGIC ---
-# MAGIC
-# MAGIC ## Troubleshooting
-# MAGIC
-# MAGIC **Clean state (if deployment fails):**
-# MAGIC ```bash
-# MAGIC cd """ + repo_root + """
-# MAGIC rm -rf .databricks/bundle/dev
-# MAGIC databricks bundle deploy --target dev
-# MAGIC ```
-"""
+# Build complete Jupyter notebook structure
+notebook_json = {
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# Deployment Commands\n",
+                "\n",
+                "**How to use Web Terminal:**\n",
+                "1. Connect to Serverless\n",
+                "2. View → Cluster Tools → Web Terminal\n",
+                "3. Run commands below\n",
+                "\n",
+                "---"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## Deploy Bundle + App\n",
+                "\n",
+                "**Command 1:** Navigate to your repository\n",
+                "```bash\n",
+                f"cd {repo_root}\n",
+                "```\n",
+                "\n",
+                "**Command 2:** Deploy bundle (Pipeline, Job, Dashboard)\n",
+                "```bash\n",
+                "databricks bundle deploy --target dev\n",
+                "```\n",
+                "\n",
+                "**Command 3:** Deploy app (run after bundle completes)\n",
+                "```bash\n",
+                "databricks bundle run -t dev wanderbricks_booking_app\n",
+                "```\n",
+                "\n",
+                "---"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## Alternative: UI Deployment\n",
+                "\n",
+                "1. Click **Deployments** in the left sidebar\n",
+                "2. Click **Deploy** button\n",
+                "3. Choose target: **dev**\n",
+                "4. Wait for deployment to complete\n",
+                "\n",
+                "**Run Job:**\n",
+                "- Jobs → `[dev username] wanderbricks_lab_job` → Run Now\n",
+                "\n",
+                "---"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## Troubleshooting\n",
+                "\n",
+                "**If deployment fails, clean state and retry:**\n",
+                "\n",
+                "**Command 1:** Navigate to your repository\n",
+                "```bash\n",
+                f"cd {repo_root}\n",
+                "```\n",
+                "\n",
+                "**Command 2:** Remove cached bundle state\n",
+                "```bash\n",
+                "rm -rf .databricks/bundle/dev\n",
+                "```\n",
+                "\n",
+                "**Command 3:** Re-deploy bundle\n",
+                "```bash\n",
+                "databricks bundle deploy --target dev\n",
+                "```"
+            ]
+        }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 3",
+            "language": "python",
+            "name": "python3"
+        },
+        "language_info": {
+            "codemirror_mode": {
+                "name": "ipython",
+                "version": 3
+            },
+            "file_extension": ".py",
+            "mimetype": "text/x-python",
+            "name": "python",
+            "nbconvert_exporter": "python",
+            "pygments_lexer": "ipython3",
+            "version": "3.11.0"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 5
+}
 
 try:
     # Write the deployment guide notebook
     with open(deploy_guide_path, 'w') as f:
-        f.write(notebook_content)
+        json.dump(notebook_json, f, indent=2)
 
     print(f"✅ Deployment guide notebook generated successfully")
     print(f"   Location: {deploy_guide_path}")
-    print(f"   Format:   Databricks Source (.py)")
+    print(f"   Format:   Jupyter Notebook (.ipynb)")
     print(f"\n   📓 Open this notebook in Databricks to see your personalized deployment commands!")
-    print(f"   ✨ Compatible with Serverless compute!")
+    print(f"   ✨ Personalized with your repo path: {repo_root}")
 
 except Exception as e:
     print(f"⚠️  Could not generate deployment guide")
