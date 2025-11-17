@@ -163,6 +163,11 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
 
 **Recommended: CLI Method (via Web Terminal)**
 1. Open the auto-generated notebook: `lab/00-setup/02_deploy_lab.ipynb`
+
+   **Important:** When you open the file, you'll see a popup warning about "Jupyter (IPYNB) notebook problem". Click **"open as a notebook"** to view it correctly.
+
+   ![Open Notebook Popup](img/02_deploy_lab_open_notebook.png)
+
 2. Connect to **Serverless** compute
 
    ![Connect to Serverless](img/connect_to_serverless_deploy.png)
@@ -176,12 +181,12 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
    ![Run Deployment Commands](img/run_deployment_commands.png)
 
 **Alternative: UI Method**
-1. Make sure you're in the **repo folder** (should see Git icon)
-2. Click **📁 Actions** menu → **Databricks Asset Bundles** → **Deploy**
+1. Click **Deployments** in the left sidebar
+2. Click **Deploy** button
 3. Choose target: **dev**
 4. Wait for deployment to complete (~1-2 minutes)
 
-**Note:** You must be in a Git folder (Repos) for bundle deployment to work.
+   ![UI Deployment](img/02_deploy_lab_ui.png)
 
 **What gets deployed:**
 - 🔄 **Lakeflow Pipeline**: `[dev your_name] wanderbricks_lab_etl`
