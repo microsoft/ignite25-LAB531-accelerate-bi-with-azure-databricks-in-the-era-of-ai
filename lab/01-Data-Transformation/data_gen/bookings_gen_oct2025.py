@@ -34,7 +34,7 @@ CATALOG = "ignite_2025"
 
 # Dynamic schema detection (same logic as create_user_resources.py)
 current_user = spark.sql("SELECT current_user()").collect()[0][0]
-SCHEMA = current_user.split("@")[0].replace(".", "_")
+SCHEMA = current_user.split("@")[0].replace(".", "_").replace("-", "_").lower()
 
 # Volume path for data files
 VOLUME_PATH = f"/Volumes/{CATALOG}/{SCHEMA}/file_data/bookings"

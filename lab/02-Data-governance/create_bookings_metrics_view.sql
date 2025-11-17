@@ -6,7 +6,7 @@ DECLARE OR REPLACE VARIABLE target_catalog STRING;
 DECLARE OR REPLACE VARIABLE target_schema STRING;
 
 SET VARIABLE target_catalog = 'ignite_2025';  -- Default catalog
-SET VARIABLE target_schema = REPLACE(SPLIT(CURRENT_USER(), '@')[0], '.', '_');  -- Auto-detect schema
+SET VARIABLE target_schema = LOWER(REPLACE(REPLACE(SPLIT(CURRENT_USER(), '@')[0], '.', '_'), '-', '_'));  -- Auto-detect schema
 
 -- Set the context so we don't need to qualify table names
 USE CATALOG IDENTIFIER(target_catalog);
