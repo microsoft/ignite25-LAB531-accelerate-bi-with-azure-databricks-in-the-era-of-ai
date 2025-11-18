@@ -1,813 +1,679 @@
-<p align="center">
-<img src="img/Banner-ignite-25.png" alt="decorative banner" width="1200"/>
-</p>
+# LAB531 - Accelerate BI with Azure Databricks in the Era of AI
 
-# [Microsoft Ignite 2025](https://ignite.microsoft.com)
+In this lab, you will build an end-to-end analytics solution using **Azure Databricks**, **Unity Catalog**, **Lakeflow**, **Genie**, **AI/BI Dashboards**, **Power BI**, and **Databricks Apps**.
 
-## LAB531: Accelerate BI with Azure Databricks in the Era of AI
+![Microsoft Ignite 2025 Banner](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/Banner-ignite-25.png)
 
-[![Databricks Community](https://img.shields.io/badge/Databricks-Community-FF3621?style=for-the-badge&logo=databricks&logoColor=white)](https://community.databricks.com/)
-
-### Session Description
-
-In this hands-on lab, you'll build a complete end-to-end data and analytics solution using Azure Databricks and the Microsoft Power BI platform. Using the fictional "Wanderbricks" vacation rental marketplace as your business scenario, you'll transform raw booking data into actionable insights through a modern lakehouse architecture.
-
-You'll create real-time data pipelines with Lakeflow (Databricks' declarative pipeline framework), implement enterprise data governance with Unity Catalog, build AI-powered dashboards using Genie and Lakeview, and integrate with Power BI for business intelligence reporting. By the end of this 90-minute workshop, you'll have deployed a production-ready data platform including automated ETL, semantic layers, natural language query capabilities, and a full-stack web application.
-
-This beginner-friendly workshop requires no local installation—everything runs in your browser using Azure Databricks serverless compute and SQL warehouses.
-
-###  Learning Outcomes
-
-By the end of this session, learners will be able to:
-
-- Build automated data pipelines using Lakeflow with built-in data quality checks and change data capture (CDC)
-- Implement enterprise data governance using Unity Catalog with catalogs, schemas, and row-level security
-- Create semantic layers with Databricks Metric Views for standardized business definitions
-- Build interactive dashboards with Lakeview and enable natural language queries with Genie AI
-- Integrate Azure Databricks with Power BI using DirectQuery for real-time business intelligence
-- Deploy full-stack applications on Databricks Apps with FastAPI and React
-- Apply medallion architecture patterns (Bronze/Silver/Gold) for lakehouse data organization
-
-###  Technologies Used
-
-1. **Azure Databricks** - Unified analytics platform
-2. **Unity Catalog** - Data governance and security
-3. **Lakeflow Spark Declarative Pipeline** - Automated ETL pipelines (formerly Delta Live Tables)
-4. **Databricks SQL** - SQL analytics engine
-5. **Lakeview** - Native BI dashboarding
-6. **Genie AI** - Natural language query interface
-7. **Databricks Apps** - Full-stack application hosting
-8. **Microsoft Power BI** - Business intelligence reporting
-9. **Delta Lake** - Open table format for lakehouse
-10. **Apache Spark** - Distributed data processing
-
-###  Microsoft Learn MCP Server
-
-[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Microsoft_Docs_MCP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=microsoft.docs.mcp&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)
-
-The Microsoft Learn MCP Server is a remote MCP Server that enables clients like GitHub Copilot and other AI agents to bring trusted and up-to-date information directly from Microsoft's official documentation. Get started by using the one-click button above for VSCode or access the [mcp.json](.vscode/mcp.json) file included in this repo.
-
-For more information, setup instructions for other dev clients, and to post comments and questions, visit our Learn MCP Server GitHub repo at [https://github.com/MicrosoftDocs/MCP](https://github.com/MicrosoftDocs/MCP). Find other MCP Servers to connect your agent to at [https://mcp.azure.com](https://mcp.azure.com).
-
-*Note: When you use the Learn MCP Server, you agree with [Microsoft Learn](https://learn.microsoft.com/en-us/legal/termsofuse) and [Microsoft API Terms](https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use) of Use.*
-
-### 📚 Resources and Next Steps
-
-| Resources          | Links                             | Description        |
-|:-------------------|:----------------------------------|:-------------------|
-| Ignite 2025 Next Steps | [https://aka.ms/Ignite25-Next-Steps](https://aka.ms/Ignite25-Next-Steps?ocid=ignite25_nextsteps_cnl) | Links to all repos for Ignite 2025 Sessions |
-| Learn at Ignite | [https://aka.ms/LearnAtIgnite](https://aka.ms/LearnAtIgnite?ocid=ignite25_nextsteps_github_cnl) | Continue learning on Microsoft Learn |
-| Databricks Academy | [https://www.databricks.com/learn](https://www.databricks.com/learn) | Free online training courses |
-| Databricks Community | [https://community.databricks.com/](https://community.databricks.com/) | Ask questions and share knowledge |
-
-## Content Owners
-
-<table>
-<tr>
-    <td align="center"><a href="http://github.com/saurabhshukla-db">
-        <img src="https://github.com/saurabhshukla-db.png" width="100px;" alt="Saurabh Shukla"/><br />
-        <sub><b>Saurabh Shukla</b></sub></a><br />
-            <a href="https://github.com/saurabhshukla-db" title="talk">📢</a>
-    </td>
-    <td align="center"><a href="http://github.com/isaac-gritz">
-        <img src="https://github.com/isaac-gritz.png" width="100px;" alt="Isaac Gritz"/><br />
-        <sub><b>Isaac Gritz</b></sub></a><br />
-            <a href="https://github.com/isaac-gritz" title="talk">📢</a>
-    </td>
-    <td align="center"><a href="http://github.com/Slcc2c">
-        <img src="https://github.com/Slcc2c.png" width="100px;" alt="Spencer Cook"/><br />
-        <sub><b>Spencer Cook</b></sub></a><br />
-            <a href="https://github.com/Slcc2c" title="talk">📢</a>
-    </td>
-    <td align="center"><a href="http://github.com/bhagyashri333">
-        <img src="https://github.com/bhagyashri333.png" width="100px;" alt="Bhagyashri Badgujar"/><br />
-        <sub><b>Bhagyashri Badgujar</b></sub></a><br />
-            <a href="https://github.com/bhagyashri333" title="talk">📢</a>
-    </td>
-</tr>
-</table>
+**Total time:** 90 minutes  
+**Difficulty:** Beginner-friendly  
+**Environment:** All work is done in the browser inside this lab VM.
 
 ---
 
-# Workshop Guide
+## Learning Outcomes
 
-**Total Time:** 90 minutes | **Skill Level:** Beginner-friendly
+By the end of this lab, you will be able to:
+
+- Build automated data pipelines using Lakeflow (Spark Declarative Pipelines) with built-in data quality checks and CDC
+- Apply enterprise data governance with Unity Catalog (catalogs, schemas, and row-level security)
+- Create semantic metric layers using Metric Views
+- Build AI-powered dashboards with Databricks AI/BI and Genie
+- Integrate Databricks with Power BI using DirectQuery
+- Deploy and explore a full-stack app running on Databricks Apps
+- Apply the medallion (Bronze/Silver/Gold) architecture for analytics data
+
+===
+
+# Workshop Timeline
+
+The suggested timeline for this 90-minute lab is:
+
+| Time | Activity |
+|------|----------|
+| **00:00 - 00:05** | Introduction |
+| **00:05 - 00:15** | Setup - Import repo, configure, deploy |
+| **00:15 - 00:40** | Lab 01 - Lakeflow Data Transformation |
+| **00:40 - 00:50** | Lab 02 - Unity Catalog Governance |
+| **00:50 - 01:00** | Lab 03 - AI/BI Dashboards & Genie |
+| **01:00 - 01:10** | Lab 04 - Publish to Power BI |
+| **01:10 - 01:20** | Lab 05 - Databricks App Deployment & Exploration |
+| **01:20 - 01:30** | Wrap-Up & Next Steps |
 
 ---
 
-## Workshop Timeline
+## Technologies Used
+
+| Technology                                 | Purpose                                      |
+|-------------------------------------------|----------------------------------------------|
+| Azure Databricks                          | Unified analytics and AI platform            |
+| Unity Catalog                             | Governance, security, and lineage            |
+| Lakeflow Spark Declarative Pipelines      | Declarative ETL/data pipelines               |
+| Databricks SQL                            | SQL analytics and warehousing                |
+| Metric Views                              | Centralized semantic metric layer            |
+| Databricks AI/BI Dashboards               | Native BI dashboards                         |
+| Genie                                     | Natural language query experience            |
+| Databricks Apps                           | Full-stack application hosting               |
+| Microsoft Power BI                        | External BI visuals and reporting            |
+
+===
+
+# Prerequisites and Environment
+
+To begin, log into the virtual machine using the following credentials: +++@lab.VirtualMachine(Win11-Pro-Base).Password+++
+
+No local installation is required. All tools run in the browser.
+
+The lab environment provides:
+
+- Access to an Azure Databricks workspace
+- Lakeflow Pipelines Editor enabled
+- New pipeline monitoring enabled
+- Web Terminal enabled
+
+> [!Note]  
+> If any of the above are not available, contact your proctor or instructor before continuing.
+
+---
+
+## Git Repository
+
+This lab uses a public GitHub repository that contains all notebooks, configuration, and app code.
+
+Copy this URL when prompted in the steps:
+
++++https://github.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai.git+++
+
+You will import this repo into your Databricks workspace in the next section.
+
+===
+
+# Quick Start - Environment Setup
+
+Follow these steps carefully before starting the lab modules.
+
+## Step 1 - Azure Databricks Workspace
+
+1. Open Microsoft Edge browser
+2. Navigate to +++https://portal.azure.com+++ inside the lab VM
+3. Sign in with the username and TAP in the **Resources** tab
+4. On the Home page, under Resources click on **View all resources**
+5. Click the Azure Databricks Workspace resource **(adb-lab531-*)**
+6. Click **Launch Workspace** to launch the Azure Databricks Workspace
+
+## Step 2 - Import the Workshop Repository
+
+1. In the Databricks workspace, in the left sidebar select **Workspace**.
+2. At the top, select **Create**.
+3. Select **Git folder**.
+4. In the **Git URL** field, paste:
+
+   +++https://github.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai.git+++
+
+5. Select **Create Git folder**.
+6. Wait for the folder to appear under your user or workspace tree.
+
+![Create Git Folder](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/create_git_folder.png)
+
+---
+
+## Step 3 - Run the Setup Notebook
+
+You will now create your personal catalog, schema, and supporting resources.
+
+1. In the imported repo, navigate to:
+
+   > lab/00-setup/01_create_user_resources
+
+2. Open the **01_create_user_resources** notebook.
+3. In the top-right, set the compute to **Serverless**.
+4. Select **Run all** on the notebook toolbar.
+5. Wait for the notebook to complete before continuing.
+
+![Connect to Serverless](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/connect_to_serverless.png)
+
+This notebook creates:
+
+- Catalog: **ignite_2025**
+- Schema: **ignite_2025.<your_username>**
+- Volume: **ignite_2025.<your_username>.file_data**
+- SQL warehouse: **Serverless Starter Warehouse** (if not already present)
+- Deployment notebook: **lab/00-setup/02_deploy_lab.ipynb** customized for your repo path
+
+> [!Knowledge]  
+> If any cell fails, review the error message in the notebook, fix the reported issue, and re-run that cell or re-run all cells.
+
+===
+
+# Deploy Workshop Resources
+
+You now deploy the pipelines, job, dashboards, metric view, and app used in the labs.
+
+## Step 4 - Deploy Resources (CLI Method - Recommended)
+
+The recommended approach is to deploy using the Web Terminal commands generated in the notebook.
+
+1. Navigate to the folder icon 
+2. Open **lab/00-setup/02_deploy_lab.ipynb**
+3. If a dialog appears about opening the IPYNB, select **Open as notebook**.
+![Open Notebook Popup](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/02_deploy_lab_open_notebook.png)
+4. Connect the notebook to **Serverless** compute.
+![Connect to Serverless for Deploy](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/connect_to_serverless_deploy.png)
+5. Click on the **Environment** icon on the right side bar (slider icon, second from the bottom).
+6. Update the environment to at least Environment V2 (recommended: V4):
+
+   ![Change Environment Version](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/change_env.png)
+
+7. Then click **Apply**.
+8. Click on the **Terminal** Icon in the bottom right of the right side panel
+9. In the Web Terminal, copy and run the deployment commands shown in the notebook. Use right click > copy, right click > paste.
+![Run Deployment Commands](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/run_deployment_commands.png)
+
+It will take 2-5 minutes for the deployment to complete.
+
+> [!Note]  
+> The notebook displays the exact commands you should run, including any environment-specific parameters.
+
+---
+
+## Step 4 (Alternative) - Deploy Resources (UI Method)
+
+If you prefer not to use the Web Terminal:
+
+1. In the left sidebar, select **Deployments**.
+2. Select the **Deploy** button.
+3. When prompted for a target environment, select **dev**.
+4. Confirm the deployment and wait 1-2 minutes for provisioning to complete.
+
+![UI Deployment](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/02_deploy_lab_ui.png)
+
+---
+
+## What the Deployment Creates
+
+The deployment (CLI or UI) creates:
+
+- Lakeflow Pipeline: **[dev your_name] wanderbricks_lab_etl**
+- Orchestration Job: **[dev your_name] wanderbricks_lab_job**
+- AI/BI Dashboard: **[dev your_name] Wanderbricks Bookings Dashboard**
+- Metric View: **wanderbricks_bookings_metrics**
+- Databricks App: **wanderbricks-booking-app**
+
+===
+
+# Run the Workshop Job
+
+You will now run the orchestrated job that builds all tables and metric views.
+
+## Step 5 - Run the Lakeflow Orchestration Job
+
+1. In the left sidebar, select **Jobs & Pipelines**.
+2. Locate the job with a name similar to:
+
+   > [dev your_name] wanderbricks_lab_job
+
+3. Select the job name to open it.
+4. In the top-right corner, select **Run now**.
+
+The job contains two main tasks:
+
+1. **Pipeline full refresh** (3-4 minutes)  
+   - Triggers the Lakeflow pipeline for a full refresh  
+   - Builds dimension tables and fact table from scratch  
+   - Ensures a clean, consistent state
+
+2. **Metric view creation** (about 1 minute)  
+   - Creates **wanderbricks_bookings_metrics** for BI and Genie
+
+> [!Hint]  
+> While the job runs, you can select individual tasks to open their run details and review progress or logs.
+
+===
+
+# Databricks App - Start and Deploy
+
+You will now make sure the **Wanderbricks** app is running and deployed.
+
+## Step 6 - Start and Deploy the App
+
+If you used the **CLI deployment**, the app may already be running. Use these steps to confirm and deploy if needed.
+
+1. In the left sidebar, select **Compute**.
+2. Select the **Apps** tab.
+3. Locate the app named:
+
+   > wanderbricks-booking-app
+
+![Find App](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/app_setup1.png)
+
+4. If the app status is **Stopped**, select **Start** and wait until the app shows as **Running**.
+5. If you are prompted to deploy, select **Deploy**, then choose the **backend** folder when asked for the app source.
+
+![Select Backend Folder](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/app_setup2.png)
+
+![Deploy App](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/app_setup3.png)
+
+Once deployed:
+
+1. On the **Apps** tab, select **wanderbricks-booking-app**.
+2. Select **Open** to launch the app UI.
+
+You should see:
+
+- Property search experience
+- AI assistant
+- Manager dashboards and KPIs
+
+===
+
+# Lab 01 - Data Transformation with Lakeflow
+
+In this lab, you will explore the Lakeflow SDP pipeline and how it implements a medallion architecture.
+
+## Overview
+
+The Lakeflow pipeline builds:
+
+- Bronze, Silver, and Gold tables for booking data
+- Five dimension tables
+- One fact table with change data capture (CDC)
+
+---
+
+## Step 1 - Explore Dimension Definitions
+
+1. In the workspace, navigate to:
+
+   > Users/[your_name]/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai
+
+2. Click on **Open in editor**
+
+3. Then navigate to
+
+   > lab/01-Data-Transformation/transformations/
+
+2. Review the following files:
+   - **dim_customer.py**
+   - **dim_date.py**
+   - **dim_employee.py**
+   - **dim_host.py**
+   - **dim_property.py**
+
+3. In each file, look for:
+   - **@dp.materialized_view()** decorators
+   - **@dp.expect()** data quality expectations
+   - **generate_sk()** for surrogate keys
+
+> [!Knowledge]  
+> Lakeflow Spark Declarative Pipelines allow you to define *what* the data objects should look like, and the engine decides *how* to build and maintain them.
+
+---
+
+## Step 2 - Explore Fact Table and CDC Logic
+
+1. In the same folder, open:
+
+   > fact_bookings.py
+
+2. Locate:
+   - **dp.create_streaming_table(...)** for real-time ingestion
+   - **dp.create_auto_cdc_flow(...)** for change data capture
+   - Joins from the CDC stream into dimension tables to build the enriched fact table
+
+---
+
+## Step 3 - Shared Utilities
+
+In the same folder structure, open:
+
+ > lab/01-Data-Transformation/utilities/common_functions.py
+
+Review helper functions such as:
+
+- **generate_sk()**
+- **get_region_udf()**
+- **get_season()**
+
+---
+
+## Step 4 - Monitor the Lakeflow Pipeline
+
+1. In the left sidebar, select **Jobs & Pipelines** (or **Pipelines**, depending on your UI).
+2. Open the pipeline named:
+
+   **[dev your_name] wanderbricks_lab_etl**
+
+3. Make sure **New pipeline monitoring** is enabled using the toggle in the pipeline UI.
+
+![Enable New Pipeline Monitoring](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/new_pipeline_monitoring.png)
+
+4. Review the following tabs:
+   - **Flow / Graph** - DAG of pipeline steps
+   - **Lineage** - Upstream and downstream data dependencies
+   - **Data quality** - Data validation and expectations
+   - **Event log** - Detailed run history
+
+![Lakeflow Editor](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/Lakeflow_editor.png)
+
+> [!Hint]  
+> Select individual nodes in the pipeline graph to see input tables, output tables, and data quality status.
+
+===
+
+# Lab 02 - Data Governance with Unity Catalog
+
+In this lab, you will explore Unity Catalog tables and metric views created by the pipeline and job.
+
+## Step 1 - Explore a Dimension Table with Catalog Explorer
+
+1. In the left sidebar, select **Catalog**.
+2. Navigate to the catalog and schema you created, for example:
+
+   > ignite_2025 → [your_username] → Tables → dim_customer
+
+3. Select **dim_customer**.
+
+![Catalog Explorer](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/catalog_explorer_view.png)
+
+4. Review the following tabs:
+   - **Overview** - Column list and basic info
+   - **Sample data** - Data preview
+   - **Details** - Table properties, storage location
+   - **Permissions** - Access control configuration
+   - **Lineage** - Data flow from source to downstream objects
+
+---
+
+## Step 2 - Use AI to Generate Column Descriptions
+
+1. On the **Overview** tab for `dim_customer`, locate the **AI generate** option for column descriptions.
+2. Select **AI generate**.
+3. Review the generated descriptions and confirm that they match the meaning of each column.
+
+> [!Note]  
+> AI-generated descriptions can be a starting point. You can manually adjust descriptions for critical business fields.
+
+---
+
+## Step 3 - Review the Metric View
+
+1. In the **Catalog**, navigate to your metric view, for example:
+
+   > ignite_2025 → [your_username] → Tables → wanderbricks_bookings_metrics
+
+2. Select the metric view.
+3. On the **Overview** tab, review:
+   - **Measures** (such as total revenue, total bookings, average nightly rate)
+   - **Dimensions** (such as country, property type, host, booking channel)
+
+4. On the **Details** tab, review:
+   - YAML configuration
+   - Source table and joins to dimension tables
+
+> [!Knowledge]  
+> Metric views provide a shared, governed semantic layer so that BI tools and Genie use consistent business logic.
+
+===
+
+# Lab 03 - Intelligent Analytics with AI/BI Dashboards & Genie
+
+This lab focuses on the Databricks AI/BI Dashboard and Genie for natural language analytics.
+
+## Step 1 - Open the Wanderbricks Dashboard
+
+1. In the left sidebar, select **Dashboards**.
+2. In the search box, search for:
+
+   > [dev your_name] Wanderbricks Bookings Dashboard
+
+3. Open the dashboard.
+
+---
+
+## Step 2 - Explore Dashboard Features
+
+On the dashboard:
+
+- Use **filters** to filter by date range, country, and property type.
+- Inspect **time series** charts for revenue and bookings.
+- Examine **breakdowns** by region, property type, and booking source.
+- Try **cross-filtering**: click one visual and see other visuals filter.
+
+> [!Hint]  
+> Hover over visual elements to see tooltips and exact metric values.
+
+---
+
+## Step 3 - Use Genie for Natural Language Queries
+
+1. From the Databricks UI, open the Genie experience: **Genie** under SQL in the left nav bar. 
+4. Click **New** to create a new Genie space if one is not already configured.
+5. Connect your data:
+   - Catalog: **ignite_2025**
+   - Schema: **[your_username]**
+   - Metric view: **wanderbricks_bookings_metrics**
+
+5. Name the Genie space: **Wanderbricks Booking Insights**.
+
+---
+
+## Step 4 - Configure Genie Space
+
+1. In **Settings**, add a description such as:
+
+   > This Genie space provides analytics for the Wanderbricks booking platform using a metric view with predefined measures and dimensions.
+
+2. Set the **Default warehouse** to your Serverless SQL warehouse.
+![Genie Warehouse Start](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/Genie1.png)
+
+3. In **Instructions**, add guidance like:
+
+   > Use MEASURE() to reference metrics (Total Bookings, Total Revenue, Cancellation Rate). Focus on 2025 data by default.
+
+---
+
+## Step 5 - Ask Sample Questions
+
+Click **New chat** and try questions such as:
 
 ```
-0:00 - 0:05  │ Introduction
-0:05 - 0:15  │ Setup: Import repo, configure, deploy
-0:15 - 0:45  │ Lab 01: Build Lakeflow pipeline (dimensions + facts)
-0:45 - 1:00  │ Lab 02: Unity Catalog & metric view (governance)
-1:00 - 1:10  │ Lab 03: AI/BI dashboards (Lakeview/Genie)
-1:10 - 1:17  │ Databricks App: Deploy & open app
-1:17 - 1:24  │ Power BI: Connect to warehouse, quick report
-1:24 - 1:30  │ Wrap-up, Q&A, next steps
+What is the total revenue for 2025?
 ```
 
----
-
-## Prerequisites
-
-**No local installation required!** Everything runs in your browser.
-
-**Required:**
-- Databricks workspace access (URL from instructor)
-  - **You can also run this lab in Databricks Free Edition** - [Sign up steps here](DATABRICKS_SIGNUP.md) (free, no credit card required)
-- Source data access: `samples.wanderbricks`
-
-**Recommended:**
-- Lakeflow Pipelines Editor enabled (Admin → Previews → Lakeflow Pipelines Editor) - [Docs](https://docs.databricks.com/en/ldp/multi-file-editor)
-
----
-
-## Quick Start Guide
-
-Follow these steps carefully. Each step includes success checkpoints and troubleshooting.
-
-### Step 1: Import Workshop Code
-
-**Instructions:**
-1. In Databricks workspace, click **Workspace** in the left sidebar
-2. Click the blue **Create** button (near the bottom)
-
-   ![Create Git Folder](img/create_git_folder.png)
-
-3. Click **Git Folder** button
-4. Paste the Git URL provided by your instructor
-5. Click **Create Git Folder**
-
-**Success Checkpoint:**
-- New folder with Git icon named `ignite_2025`
-- Contains `databricks.yml`, `lab/`, `resources/`
-
-**Common Issues:**
-- **"Repos not found"**: Repos is not enabled. Ask instructor to enable it.
-- **"Authentication failed"**: For private repos, add credentials in User Settings → Git Integration.
-
----
-
-### Step 2: Run Setup Notebook
-
-**Instructions:**
-1. In your imported repo, navigate to **lab** → **00-setup**
-2. Open the **01_create_user_resources** notebook
-3. **IMPORTANT:** Connect to **Serverless** compute (top-right dropdown → Select "Serverless")
-
-   ![Connect to Serverless](img/connect_to_serverless.png)
-
-4. Click **Run All** at the top (or press Shift+Enter on each cell)
-5. Wait for all cells to complete (~2-3 minutes)
-6. Scroll to the **final output** (Step 10)
-
-**What this creates:**
--  Catalog: `ignite_2025`
--  Your personal schema: `ignite_2025.<your_username>`
--  Volume: `ignite_2025.<your_username>.file_data`
--  SQL Warehouse: `Serverless Starter Warehouse` - 2X-Small (auto-created if needed)
--  Deployment guide notebook: `02_deploy_lab.py` (auto-generated with your repo path, works with Serverless)
-
-**Success Checkpoint:**
-- All cells complete with green checkmarks
-- Final output shows catalog, schema, volume, warehouse ID
-- Configuration auto-updated in `databricks.yml` and `app.yaml`
-
-**Common Issues:**
-- **"Permission denied - CREATE CATALOG"**: Instructor needs to grant catalog creation permission or pre-create the catalog
-- **"current_user() returns null"**: You'll need to hardcode your schema name in the next step
-- **"ModuleNotFoundError: databricks.sdk"**: You're not connected to Serverless compute - switch to Serverless in the compute dropdown
-
-
----
-
-### Step 3: Verify Configuration (1 minute)
-
-**Optional:** If the setup notebook showed an error with `current_user()`:
-- Search for `schema:` in the variables section
-- Comment it out by adding `#` at the start
-- Add a new line: `schema: your_username` (use your actual username)
-
-**Success Checkpoint:**
-- `warehouse_id` is filled (not `PLACEHOLDER_WAREHOUSE_ID`)
-
-**Common Issues:**
-- **Still shows PLACEHOLDER_WAREHOUSE_ID**: Setup notebook Step 12 failed - manually copy warehouse ID from Step 2 output and paste it
-
----
-
-### Step 4: Deploy Workshop Resources
-
-**Recommended: CLI Method (via Web Terminal)**
-1. Open the auto-generated notebook: `lab/00-setup/02_deploy_lab.py`
-2. Connect to **Serverless** compute
-
-   ![Connect to Serverless](img/connect_to_serverless_deploy.png)
-
-3. Go to **View → Cluster Tools → Web Terminal**
-
-   ![Open Web Terminal](img/open_web_terminal.png)
-
-4. Run the deployment commands shown in the notebook
-
-   ![Run Deployment Commands](img/run_deployment_commands.png)
-
-**Alternative: UI Method**
-1. Make sure you're in the **repo folder** (should see Git icon)
-2. Click **📁 Actions** menu → **Databricks Asset Bundles** → **Deploy**
-3. Choose target: **dev**
-4. Wait for deployment to complete (~1-2 minutes)
-
-**Note:** You must be in a Git folder (Repos) for bundle deployment to work.
-
-**What gets deployed:**
-- 🔄 **Lakeflow Pipeline**: `[dev your_name] wanderbricks_lab_etl`
-- 📋 **Orchestration Job**: `[dev your_name] wanderbricks_lab_job`
-- 📊 **Dashboard**: `[dev your_name] Wanderbricks Bookings Dashboard`
-
-**Success Checkpoint:**
-- "Deployment complete!" message with no errors
-- Job visible in **Workflows**: `[dev your_name] wanderbricks_lab_job`
-
-**Common Issues:**
-
-| Issue | Cause | Fix |
-|-------|-------|-----|
-| "Databricks Asset Bundles" not in Actions menu | Not in Git folder | Go back to Repos folder, not workspace folder |
-| "Catalog not found" | Setup step didn't complete | Re-run setup notebook from Step 2 |
-| "Invalid warehouse_id" | Wrong ID in databricks.yml | Check warehouse ID from Step 2 |
-| "Permission denied" | Missing Unity Catalog permissions | Ask instructor for help |
-
----
-
-### Step 5: Run Workshop Job
-
-**Instructions:**
-1. Click **Workflows** in the left sidebar
-2. Find your job: `[dev your_name] wanderbricks_lab_job`
-3. Click the job name to open it
-4. Click the blue **Run Now** button (top right)
-5. Watch the job progress in real-time
-
-**What happens (in order):**
-1. **Task 1 - Pipeline Full Refresh** (~3-4 minutes):
-   - Triggers the Lakeflow pipeline with **full refresh** (rebuilds all tables from scratch)
-   - Creates 5 dimension tables + 1 fact table
-   - This ensures a clean slate for the workshop
-   - You can click into this task to see the pipeline flow diagram
-2. **Task 2 - Metric View** (~1 minute):
-   - Creates `wanderbricks_bookings_metrics` for AI/BI dashboards
-
-**Success Checkpoint:**
-- Job shows "Succeeded" with 2 green tasks
-- Total runtime: ~4-6 minutes
-
-**Common Issues:**
-- **Job fails on Task 1**: Pipeline may have data quality issues - check pipeline logs
-- **Task 2 fails**: Pipeline didn't complete - wait for Task 1 to finish first
-
----
-
-### Step 6: Deploy Databricks App (Optional)
-
-**Prerequisites:**
-- Step 5 (job) must have completed successfully
-
-**Recommended: CLI Method (via Web Terminal)**
-1. Open the deployment guide: `lab/00-setup/02_deploy_lab.py`
-2. Connect to **Serverless** compute
-3. Go to **View → Cluster Tools → Web Terminal**
-4. Run the app deployment command shown in the notebook
-
-**Access your app:**
-1. **Apps** in left sidebar → Find `wanderbricks-booking-app`
-2. Click to open and explore:
-   - Property search
-   - AI assistant
-   - Country manager dashboards
-
-**Success:** App shows "Running" status and loads data
-
----
-
-
-**Next:** Dive into the labs to understand what you built!
-
----
-
-## Lab Modules
-
-### Lab 01: Data Transformation with Lakeflow Pipeline
-
-**🎯 What You'll Build:** A complete medallion architecture pipeline with 5 dimensions and 1 fact table
-**💼 Business Value:** Transform raw booking data into analytics-ready tables with data quality guarantees
-
-#### What is Lakeflow Spark Declarative Pipeline?
-
-Lakeflow (formerly called Delta Live Tables / DLT) is Databricks' framework for building reliable, maintainable data pipelines. Think of it as "autopilot for data engineering" - you declare what tables you want and how they relate, and Lakeflow handles the complexity:
-- Automatic dependency management
-- Built-in data quality checks
-- Change data capture (CDC) for tracking updates
-- Automatic retries and error handling
-
-#### Architecture: Medallion Layers
-
 ```
-Bronze (Raw)               → Silver (Clean)           → Gold (Business)
-samples.wanderbricks.bookings → dim_customer                → metric views
-samples.wanderbricks.users    → dim_property                → dashboards
-samples.wanderbricks.hosts    → dim_host
-samples.wanderbricks.properties→ dim_employee
-                              → dim_date
-                              → fact_bookings (with CDC)
+Show monthly revenue by customer region for 2025
 ```
 
-#### Step-by-Step Walkthrough
-
-##### 1. Explore Dimension Tables
-
-Open and review these files in [lab/01-Data-Transformation/transformations/](lab/01-Data-Transformation/transformations/):
-- `dim_customer.py` - Customer dimension with region mapping and surrogate keys
-- `dim_property.py` - Properties with amenities and pricing tiers
-- `dim_host.py` - Hosts with ratings and management styles
-- `dim_employee.py` - Employees with roles and tenure
-- `dim_date.py` - Complete date dimension (2020-2030)
-
-**Key patterns:** `@dp.materialized_view()`, `@dp.expect()` for data quality, `generate_sk()` for surrogate keys
-
-##### 2. Explore Fact Table with CDC
-
-Open [fact_bookings.py](lab/01-Data-Transformation/transformations/fact_bookings.py) to see:
-- `dp.create_streaming_table()` for real-time data
-- `dp.create_auto_cdc_flow()` for change data capture
-- Dimension joins in `fact_bookings_enriched` view
-
-##### 3. Shared Utilities
-
-See [common_functions.py](lab/01-Data-Transformation/utilities/common_functions.py) for helper functions like `generate_sk()`, `get_region_udf()`, and `get_season()`
-
-##### 4. Monitor Pipeline and Explore Data
-
-1. **Workflows** → Click **wanderbricks_lab_etl** pipeline task
-2. Explore **Lakeflow Pipeline UI** tabs: Flow diagram, Lineage, Data quality, Event log
-3. **Data Explorer** → `ignite_2025` → `<your_schema>` → Browse tables
-4. Query your data in **SQL Editor**: `SELECT * FROM ignite_2025.<your_schema>.dim_customer LIMIT 10;`
-
-#### Success Criteria
-
-- Pipeline completes with all tables green
-- Can query 5 dimensions + 1 fact table in Data Explorer
-
----
-
-### Lab 02: Data Governance with Unity Catalog
-
-
-**What You'll Build:** Metric views for business users and Power BI integration
-**Business Value:** Create a governed semantic layer with standardized metrics
-
-#### What is a Metric View?
-
-A metric view is Unity Catalog's way of creating a **semantic layer** - a business-friendly interface to your data:
-- Standard definitions everyone agrees on
-- Natural language synonyms for AI queries
-- Reusable measures and dimensions
-- Centralized governance
-
-**Example:** Instead of each analyst writing different revenue calculations, everyone uses the same certified "Total Revenue" metric.
-
-#### Step-by-Step Walkthrough
-
-##### 1. Understanding Metric Views
-
-**Open:** `lab/02-Data-governance/create_bookings_metrics_view.sql`
-
-**What this creates:**
-
-```sql
-CREATE METRIC VIEW IF NOT EXISTS wanderbricks_bookings_metrics AS
-SELECT
-    -- Dimensions (things you GROUP BY)
-    booking_id,
-    destination COMMENT 'City where property is located' SYNONYM 'city',
-    country,
-    property_type SYNONYM 'accommodation type',
-
-    -- Measures (things you SUM/COUNT/AVG)
-    total_price METRIC COMMENT 'Total booking value in USD' SYNONYM 'revenue',
-    total_nights METRIC COMMENT 'Number of nights booked',
-    guests METRIC COMMENT 'Number of guests'
-FROM fact_bookings
-JOIN dim_property...
+```
+Which property types have the highest cancellation rates?
 ```
 
-**Key elements:**
-- **METRIC** keyword: Marks numeric measures
-- **COMMENT**: Explains what it means
-- **SYNONYM**: Alternative names for natural language queries
-
-##### 2. Explore Your Metric View
-
-**View the metric view:**
-
-1. **Data Explorer** → `ignite_2025` → `<your_schema>` → `wanderbricks_bookings_metrics`
-2. Click **Metrics** tab - see all available measures
-3. Click **Dimensions** tab - see all grouping columns
-
-**Query with natural language context:**
-
-The metric view is now ready for Genie AI (Lab 03):
-- "What's the total revenue by country?"
-- "Show me average nights by property type"
-- "Which city has the highest booking count?"
-
-#### Success Criteria
-
-- Metric view exists with metrics and dimensions tabs visible
-- Can query metric view data
-
-#### Files Reference
-
-- `lab/02-Data-governance/create_bookings_metrics_view.sql`
-- `lab/02-Data-governance/unity_catalog_features.md` — Catalog Explorer guide (UI-only) for `fact_bookings`
-
----
-
-### Lab 03: AI/BI Analytics
-
-
-**What You'll Build:** Interactive dashboard and AI-powered query interface
-**Business Value:** Enable business users to explore data without writing SQL
-
-#### Part A: Lakeview Dashboard
-
-**What is Lakeview?**
-Databricks' native BI tool for creating interactive dashboards - think Tableau but built into your data platform.
-
-##### 1. Find Your Dashboard
-
-1. Click **Dashboards** in the left sidebar
-2. Search for: `[dev your_name] Wanderbricks Bookings Dashboard`
-3. Click to open
-
-**Note:** Your dashboard was automatically deployed in Step 4 of the Quick Start!
-
-##### 2. Explore Dashboard Features
-
-**Components you'll see:**
-- KPI Cards: Total bookings, revenue, average nights
-- Line Charts: Revenue over time, booking trends
-- Maps: Geographic distribution of bookings
-- Bar Charts: Top destinations, property types
-
-**Interactive features:**
-- **Filters**: Try filtering by date range, country, or property type
-- **Drill-down**: Click on a chart to filter other visuals
-- **Refresh**: Data updates automatically as pipeline runs
-
-##### 3. Schedule and Share (Optional)
-
-- **Schedule refresh**: Dashboard → Schedule → Daily at 6 AM
-- **Share with team**: Dashboard → Share → Add users or groups
-- **Subscribe**: Email me daily with latest metrics
-
-#### Part B: Genie Space for Natural Language Queries
-
-**What is Genie?**
-Your AI data analyst - ask questions in plain English, get charts and insights automatically.
-
-##### 1. Create Your Genie Space
-
-1. Click **AI/BI** in the left sidebar
-2. Click **Genie Spaces**
-3. Click **Create Genie Space**
-
-**Configuration:**
-- **Name**: `Wanderbricks Booking Insights`
-- **Description**: `Analyze vacation rental bookings, properties, and customer trends`
-- **Data Source**: Select your metric view
-  - `ignite_2025.<your_schema>.wanderbricks_bookings_metrics`
-- Click **Create**
-
-##### 2. Sample Questions to Try
-
-**Revenue Analysis:**
-- "What is the total revenue by country?"
-- "Show me monthly revenue trends for 2024"
-- "Which property type generates the most revenue?"
-
-**Booking Patterns:**
-- "What's the average booking length by destination?"
-- "How many bookings do we have by month?"
-- "Show me booking distribution by property type"
-
-**Geographic Insights:**
-- "What are the top 10 cities by booking count?"
-- "Compare revenue between EMEA and Americas regions"
-- "Which country has the highest average booking value?"
-
-##### 3. Understanding Genie Responses
+```
+Which cities have the most bookings in 2025?
+```
 
 For each query, Genie shows:
-1. **SQL Query**: See what Genie generated (learn SQL!)
-2. **Results Table**: Raw data
-3. **Visualization**: Auto-generated chart
-4. **Insights**: AI-generated observations
 
-**Tips for better results:**
-- Be specific: "2024 revenue" vs "revenue"
-- Use synonyms from your metric view
-- Ask follow-up questions to refine
+1. The generated SQL
+2. A results table
+3. A visualization
+4. Optional AI-generated insights
 
-#### Success Criteria
+> [!Knowledge]  
+> Genie uses the governed metric definitions from the metric view so that business users do not need to know SQL or table structure.
 
-- Dashboard loads with interactive filters
-- Genie space answers questions accurately
+===
 
-#### Files Reference
+# Lab 04 - Publish Databricks Data to Power BI
 
-- `lab/03-AI-BI/Wanderbricks Dashboard (using Metric View).lvdash.json` - Dashboard definition
-- `lab/03-AI-BI/create_genie_space.md` - Detailed Genie setup guide
+In this lab, you will see how to publish Databricks data to Power BI using DirectQuery.
 
----
+> [!Note]  
+> Depending on your hosted environment, some Power BI steps may already be completed or simulated. Follow any additional instructions from your proctor if there are environment-specific differences.
 
-### Lab 04: Power BI Integration
+## Step 1 - Download the Power BI Report
 
-**🎯 What You'll Build:** Connect Power BI Desktop to Databricks
-**💼 Business Value:** Integrate with existing BI tools and workflows
+1. In the Databricks workspace, navigate to your Git repo folder.
+2. Go to: **lab/04-PowerBI/**
+3. Locate the file:
 
+   > wanderbricks_ignite_direct_query_demo - v3.pbix
 
-
-#### Step-by-Step Connection
-
-##### 1. Get Connection Details
-
-**From Databricks:**
-1. Go to **SQL Warehouses** in left sidebar
-2. Click your warehouse
-3. Click **Connection Details** tab
-
-**Copy these values:**
-- Server hostname: `xxxxx.cloud.databricks.com`
-- HTTP path: `/sql/1.0/warehouses/xxxxx`
-
-##### 2. Connect Power BI Desktop
-
-1. Open **Power BI Desktop**
-2. **Get Data** → **More** → Search "Databricks"
-3. Select **Databricks**
-4. Enter connection details from step 1
-5. Authentication: **OAuth 2.0** (recommended) or **Personal Access Token**
-
-##### 3. Import Tables
-
-1. After connecting, browse to:
-   - Catalog: `ignite_2025`
-   - Schema: `<your_schema>`
-   - Tables: Select dimension and fact tables (e.g., `dim_customer`, `dim_property`, `fact_bookings`)
-2. Click **Load** (imports into Power BI)
-
-##### 4. Build Your First Report
-
-**Try these visualizations:**
-- **Map**: Bookings by country (use dimension and fact tables)
-- **Column chart**: Revenue by property type
-- **Line chart**: Bookings over time
-- **Card**: Total revenue using DAX measures
-
-#### Success Criteria
-
-- Power BI connects and loads table data
-- Can create visualizations
+4. Right-click the file and select **Download**.
 
 ---
 
-### Lab 05: Databricks Apps - Full Stack Application
+## Step 2 - Import the Report into Microsoft Fabric
 
-**🎯 What You'll Build:** Production web application with FastAPI + React
-**💼 Business Value:** Deploy customer-facing applications with embedded analytics
+1. Open a browser tab and go to **https://fabric.microsoft.com**.
+2. Sign in with your **Username** on the resources tab if you are not already signed in.
+4. In Fabric, open **My workspace**.
+5. Select **Import** → **Report, Paginated Report or Workbook**.
 
-#### What is Databricks Apps?
+![Import Report](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_create_new_report1.png)
 
-Databricks Apps lets you deploy full-stack applications directly on Databricks:
-- **Backend**: Python (FastAPI, Flask, etc.)
-- **Frontend**: React, Vue, or any static site
-- **Data Access**: Direct SQL Warehouse connection
-- **Authentication**: Automatic SSO integration
-- **Deployment**: One-command deploy from bundles
-
-**Use cases:**
-- Customer-facing dashboards
-- Internal tools and admin panels
-- Data applications for external stakeholders
-- Embedded analytics in products
-
-#### Understanding the Three Personas
-
-The Wanderbricks app demonstrates different implementation levels:
-
-| Persona | Implementation | Data Source |
-|---------|----------------|-------------|
-| Country Manager | Full Stack (Frontend + Backend + Database) | Real Databricks data via FastAPI backend |
-| Customer Data Platform | Frontend Only (No backend) | Static hardcoded sample data |
-| Demand Forecasting | Frontend Only (No backend) | Static hardcoded sample data |
-
-**Key Points:**
-- Country Manager: Production-ready implementation querying your actual pipeline tables (dim_*, fact_bookings)
-- CDP & Demand Forecasting: UI demonstrations with hardcoded data - no backend endpoints or database queries
-- This design lets you explore multi-persona concepts without building three complete backends
-
-#### Architecture
-
-```
-┌─────────────────────────────────────────┐
-│  React Frontend (TypeScript)            │
-│  - Property search UI                   │
-│  - Dashboard visualizations             │
-│  - AI assistant chat                    │
-└─────────────────┬───────────────────────┘
-                  │ API calls
-┌─────────────────▼───────────────────────┐
-│  FastAPI Backend (Python)               │
-│  - REST API endpoints                   │
-│  - Genie AI integration                 │
-│  - Dashboard queries                    │
-└─────────────────┬───────────────────────┘
-                  │ SQL queries
-┌─────────────────▼───────────────────────┐
-│  Databricks SQL Warehouse               │
-│  - samples.wanderbricks tables          │
-│  - Your fact/dimension tables           │
-└─────────────────────────────────────────┘
-```
-
-#### What the App Does
-
-**Wanderbricks Booking Platform:**
-
-1. **Property Search**
-   - Browse vacation rentals by destination
-   - Filter by dates, guests, price
-   - View property details and images
-
-2. **AI Assistant**
-   - Natural language search using Genie
-   - "Show me beachfront properties in Tokyo under $200/night"
-   - Converts queries to property searches
-
-3. **Country Manager Dashboard**
-   - 6 performance modules:
-     - Market Performance (GBV, revenue, trends)
-     - City Performance (top cities, market share)
-     - Host Performance (supply metrics, churn)
-     - Guest Performance (satisfaction, retention)
-     - Property Performance (types, amenities)
-     - Operations (employee distribution, support)
-
-#### Explore the Code
-
-See [lab/05-app/backend/main.py](lab/05-app/backend/main.py) for FastAPI endpoints, [app/routers/dashboard.py](lab/05-app/backend/app/routers/dashboard.py) for dashboard logic, and [genie/client.py](lab/05-app/backend/genie/client.py) for AI integration. Frontend is pre-built in `backend/static/`.
-
-#### Deploy the App
-
-**From the repository root:**
-
-```bash
-databricks bundle deploy --target dev
-databricks bundle run -t dev wanderbricks_booking_app
-```
-
-**What happens:**
-1. Bundle deploys to Databricks
-2. App starts automatically
-3. Uses pre-built frontend from `backend/static/`
-
-#### Access Your App
-
-1. Go to **Apps** in left sidebar
-2. Find: `wanderbricks-booking-app`
-3. Click to open the app URL
-4. Explore:
-   - Search for properties
-   - Try the AI assistant
-   - View dashboard analytics
-
-
-#### Success Criteria
-
-- App deploys and property search loads data
-- Dashboard shows metrics
+5. Browse to the downloaded `.pbix` file and upload it.
 
 ---
 
-## 🎉 Workshop Complete!
+## Step 3 - Update Data Source Parameters
 
-## 📚 What's Next?
+1. After import completes, click on the Power BI semantic model
+2. Navigate to the **Settings** for the dataset / report.
+![Settings](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_create_new_report3.png)
+3. Update the parameters using your Databricks SQL Warehouse connection details:
+   - **Server hostname**
+   - **HTTP path**
+   - **UC_Catalog**: ignite_2025
+   - **UC_Schema**: change this to your user schema
 
-### Continue Learning
+You can find both in Databricks under **SQL Warehouses → (your warehouse) → Connection details**.
 
-**Databricks Learning Paths:**
-1. [Data Engineering with Databricks](https://www.databricks.com/learn/training/data-engineer)
-2. [ML Practitioner Learning Path](https://www.databricks.com/learn/training/ml-practitioner)
-3. [Lakeflow Deep Dive](https://www.databricks.com/learn/training/lakeflow)
-
-
-
-
-### Join the Community
-
-- [Databricks Community Forum](https://community.databricks.com/)
-- [Databricks YouTube Channel](https://www.youtube.com/c/Databricks)
-- [Data + AI Summit](https://www.databricks.com/dataaisummit/) - Annual conference
+![SQL Connections](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_create_new_report2.png)
 
 ---
 
-## 🆘 Troubleshooting
+## Step 4 - Configure Credentials
 
-| Issue | Fix |
-|-------|-----|
-| **Repos not found in sidebar** | Ask instructor: Admin Console → Workspace Settings → Repos |
-| **Asset Bundles not in Actions menu** | Must be in Git folder (Repos), not regular workspace folder |
-| **Permission denied - CREATE CATALOG** | Ask instructor to grant permissions or pre-create catalog |
-| **Bundle deploy fails** | Re-run setup notebook |
-| **Pipeline running but no tables** | Wait for completion (~5-7 min). Check Lakeflow UI for progress |
-| **Table not found in SQL** | Verify pipeline completed and schema name is correct |
-| **Dashboard shows no data** | Wait for pipeline; check dashboard uses your schema; click Refresh |
-| **Genie gives wrong answers** | Be specific; verify metric view selected; check "Show SQL" |
-| **App won't start** | Check `warehouse_id` in databricks.yml; verify warehouse running |
-| **Schema auto-detection failed** | Hardcode `schema: your_username` in databricks.yml |
-| **Warehouse not found** | Re-run setup notebook or manually copy warehouse ID from SQL Warehouses |
-| **Want to start over** | `DROP SCHEMA ignite_2025.<your_username> CASCADE;` then re-run setup |
+1. In the same settings pane, locate **Edit credentials**.
+2. Choose **OAuth2** as the authentication method.
+3. Sign in with your Databricks / organizational account as required.
+
+![OAuth Setup](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_create_new_report4.png)
 
 ---
 
+## Step 5 - Explore the Report
 
-## 📖 Glossary
+1. Open the imported report in Fabric.
+2. Interact with filters and visuals.
 
-**Asset Bundle**: Databricks' infrastructure-as-code format (YAML files defining resources)
+![Report Dashboard](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_create_new_report5.png)
 
-**CDC (Change Data Capture)**: Tracking insertions, updates, and deletions in data
+The report uses **DirectQuery**, so visuals are backed by live Databricks data.
 
-**Lakeflow Spark Declarative Pipeline**: Databricks framework for building reliable data pipelines (formerly called Delta Live Tables / DLT)
+> [!Knowledge]  
+> DirectQuery keeps the data in Databricks. Power BI sends queries at run time instead of importing data into the PBIX file.
 
-**Dimension Table**: Reference data (customers, products, dates) - the "who, what, when, where"
+===
 
-**Fact Table**: Transactional data (orders, bookings, events) - the "measurements"
+# Lab 05 - Explore the Databricks App
 
-**Genie**: Databricks AI assistant for natural language data queries
+In this final lab, you will explore the **Wanderbricks** production-style app deployed on Databricks Apps.
 
-**Lakeview**: Databricks native BI tool for dashboards
+## Step 1 - Open the App
 
-**Medallion Architecture**: Bronze (raw) → Silver (clean) → Gold (business) data organization
-
-**Metric View**: Semantic layer with standardized business definitions
-
-**Repos**: Git integration in Databricks workspace
-
-**Surrogate Key**: Artificial unique identifier (hash of natural key)
-
-**Unity Catalog**: Databricks data governance layer (security, discovery, lineage)
-
----
-
-
-## 🙏 Thank You!
-
-Thank you for participating in the Wanderbricks Lab workshop! We hope you:
-- Learned new Databricks capabilities
-- Feel confident building end-to-end data solutions
-- Can apply these patterns to your own projects
-- Had fun! 🎉
-
-
-
-**Stay Connected:**
-- Follow Databricks on [LinkedIn](https://www.linkedin.com/company/databricks)
-- Subscribe to [Databricks Blog](https://www.databricks.com/blog)
-- Register for [Data + AI Summit](https://www.databricks.com/dataaisummit/)
+1. In the Azure Databricks left sidebar, select **Compute**.
+2. Select the **Apps** tab.
+3. Confirm that **wanderbricks-booking-app** is **Running**.
+   - If not, start it and wait until the status is **Running**.
+4. Select **wanderbricks-booking-app**.
+5. Select **Open app**.
 
 ---
 
-## Contributing
+## Step 2 - Personas in the Wanderbricks App
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit [Contributor License Agreements](https://cla.opensource.microsoft.com).
+The app demonstrates three different persona experiences:
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+| Persona              | Implementation                                | Data Source                                      |
+|----------------------|-----------------------------------------------|--------------------------------------------------|
+| Country Manager      | Full stack (frontend + backend + database)    | Real Databricks data via FastAPI backend         |
+| Customer Data Platform (CDP) | Frontend only (no backend)            | Static hardcoded sample data                     |
+| Demand Forecasting   | Frontend only (no backend)                    | Static hardcoded sample data                     |
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+**Country Manager Dashboard** - full-stack, powered by your Lakeflow pipeline data:
 
-## Trademarks
+![Country Manager Dashboard](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/app_country_manager.png)
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+**Customer Data Platform (CDP)** - frontend-only, static sample data:
+
+![CDP View](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/app_cdp.png)
+
+**Demand Forecasting** - frontend-only, static sample data:
+
+![Demand Forecasting View](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/app_demand_forecasting.png)
+
+---
+
+## Step 3 - Explore User Flows
+
+In the app UI, explore the following:
+
+- **Property search and filtering**  
+  Search for properties by country, city, and date range.
+
+- **AI assistant**  
+  Use the AI assistant (if present) to ask questions similar to Genie but from within the app context.
+
+- **Manager views**  
+  Review booking, revenue, and performance dashboards designed for a regional or country manager persona.
+
+> [!Hint]  
+> This app demonstrates how a full-stack production experience can be hosted directly on Databricks, close to the data and AI workloads.
+
+---
+
+## Step 4 - Explore the Code (Optional)
+
+If you want to see how the backend is implemented:
+
+- **lab/05-app/backend/main.py** - FastAPI entrypoints  
+- **lab/05-app/backend/app/routers/dashboard.py** - dashboard routes and logic  
+- **lab/05-app/backend/genie/client.py** - Genie / AI integration  
+- Frontend assets live under **lab/05-app/backend/static/**.
+
+---
+
+## Success Criteria
+
+You have successfully completed this lab when:
+
+- The **Lakeflow pipeline** runs successfully and builds the dimension and fact tables.
+- The **wanderbricks_bookings_metrics** metric view is created.
+- The **Wanderbricks Bookings Dashboard** displays data and responds to filters.
+- Genie answers natural language questions against your metric view.
+- The Power BI report connects to Databricks via DirectQuery (if Fabric is available).
+- The **wanderbricks-booking-app** opens and loads data for at least one persona.
+
+===
+
+# Wrap-Up and Next Steps
+
+You have now:
+
+- Deployed a lakehouse-style data platform using Lakeflow
+- Applied governance and semantic modeling with Unity Catalog and Metric Views
+- Enabled AI-powered analytics with Genie and AI/BI Dashboards
+- Connected Databricks data to Power BI using DirectQuery (where available)
+- Explored a production-style Databricks App running directly on the platform
+
+## Suggested Next Steps
+
+- Extend the Lakeflow pipeline with additional dimensions or fact tables.
+- Add new measures and dimensions to the metric view and refresh the dashboard.
+- Customize dashboard filters and visuals to match your own KPIs.
+- Experiment with additional Genie questions and review the generated SQL.
+- Review the app source code in the repo to understand the FastAPI and React implementation.
+
+> [!Help]  
+> If you experience issues with the lab environment, contact your instructor or support team for assistance.

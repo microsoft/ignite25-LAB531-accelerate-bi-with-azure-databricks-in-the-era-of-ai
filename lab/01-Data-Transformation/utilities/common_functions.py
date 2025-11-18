@@ -18,7 +18,7 @@ catalog = spark.conf.get("catalog", "ignite_2025")
 schema = spark.conf.get("schema")
 if not schema:
     username = spark.sql("SELECT current_user()").collect()[0][0]
-    schema = username.split("@")[0].replace(".", "_")
+    schema = username.split("@")[0].replace(".", "_").replace("-", "_").lower()
 
 @udf(returnType=StringType())
 def get_region_udf(country):
