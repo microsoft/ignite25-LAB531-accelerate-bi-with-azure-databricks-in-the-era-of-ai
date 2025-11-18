@@ -47,6 +47,17 @@ try:
     spark.sql(f"CREATE CATALOG IF NOT EXISTS {catalog_name}")
     print(f"✅ Catalog created/verified: {catalog_name}")
 
+    # Grant permissions to all account users so others can create their schemas
+    try:
+        spark.sql(f"GRANT USE CATALOG ON CATALOG {catalog_name} TO `account users`")
+        spark.sql(f"GRANT CREATE SCHEMA ON CATALOG {catalog_name} TO `account users`")
+        print(f"✅ Granted catalog permissions to all account users")
+        print(f"   Other users can now create their own schemas in this catalog")
+    except Exception as grant_error:
+        print(f"ℹ️  Note: Could not grant permissions (you may not be catalog owner)")
+        print(f"   This is normal if catalog already existed")
+        print(f"   Permissions are managed by the catalog owner or admin")
+
     # Verify we can use it
     spark.sql(f"USE CATALOG {catalog_name}")
     print(f"✅ Successfully switched to catalog: {catalog_name}")
