@@ -29,12 +29,20 @@ from pyspark.sql import SparkSession
 
 # COMMAND ----------
 
-# Catalog and schema configuration
-CATALOG = "ignite_2025"
-
-# Dynamic schema detection (same logic as create_user_resources.py)
+# Dynamic catalog and schema detection (same logic as create_user_resources.py)
+import re
 current_user = spark.sql("SELECT current_user()").collect()[0][0]
 SCHEMA = current_user.split("@")[0].replace(".", "_").replace("-", "_").lower()
+
+# Auto-generate catalog name from user email
+# Extract numeric user ID from email (e.g., User1-56748340@... → 56748340)
+match = re.search(r'-(\d+)@', current_user)
+if match:
+    user_id = match.group(1)
+    CATALOG = f"adb_lab531_{user_id}"
+else:
+    # Fallback for non-Skillable emails
+    CATALOG = f"adb_lab531_{SCHEMA}"
 
 # Volume path for data files
 VOLUME_PATH = f"/Volumes/{CATALOG}/{SCHEMA}/file_data/bookings"

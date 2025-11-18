@@ -13,7 +13,17 @@ source_catalog_schema = spark.conf.get("source_catalog_schema", "samples.wanderb
 if not source_catalog_schema:
     source_catalog_schema = "samples.wanderbricks"
 
-catalog = spark.conf.get("catalog", "ignite_2025")
+# Catalog is set by pipeline config from databricks.yml
+# Fallback uses dynamic extraction from user email if not set
+import re
+catalog = spark.conf.get("catalog", "")
+if not catalog:
+    username = spark.sql("SELECT current_user()").collect()[0][0]
+    match = re.search(r'-(\d+)@', username)
+    if match:
+        catalog = f"adb_lab531_{match.group(1)}"
+    else:
+        catalog = f"adb_lab531_{username.split('@')[0].replace('.', '_').replace('-', '_').lower()}"
 
 schema = spark.conf.get("schema")
 if not schema:

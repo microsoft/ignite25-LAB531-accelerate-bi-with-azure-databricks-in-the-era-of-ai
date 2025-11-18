@@ -34,6 +34,18 @@ print(f"Current user: {current_user_email}")
 current_user_schema = current_user_email.split("@")[0].replace(".", "_").replace("-", "_").lower()
 print(f"Schema name: {current_user_schema}")
 
+# Auto-generate catalog name from user email
+# Extract numeric user ID from email (e.g., User1-56748340@... → 56748340)
+import re
+match = re.search(r'-(\d+)@', current_user_email)
+if match:
+    user_id = match.group(1)
+    catalog_name = f"adb_lab531_{user_id}"
+else:
+    # Fallback for non-Skillable emails (use first part of email)
+    catalog_name = f"adb_lab531_{current_user_schema}"
+print(f"Catalog name: {catalog_name} (auto-generated from your email)")
+
 # COMMAND ----------
 
 # MAGIC %md
@@ -41,7 +53,7 @@ print(f"Schema name: {current_user_schema}")
 
 # COMMAND ----------
 
-catalog_name = "ignite_2025"
+# catalog_name is already set above from user email extraction
 
 try:
     spark.sql(f"CREATE CATALOG IF NOT EXISTS {catalog_name}")
@@ -67,8 +79,7 @@ except Exception as e:
 
 # COMMAND ----------
 
-# Set catalog to ignite_2025
-catalog_name = "ignite_2025"
+# Use the catalog_name already set from user email extraction
 
 try:
     spark.sql(f"USE CATALOG {catalog_name}")
@@ -455,6 +466,31 @@ else:
     print("\nℹ️  Note: These files use ${var.warehouse_id} and don't need updates:")
     print("     - wanderbricks_lab_job.job.yml")
     print("     - Wanderbricks_Bookings.dashboard.yml")
+
+    # Also update catalog name in databricks.yml
+    print("\n" + "-" * 80)
+    print("Updating catalog name in databricks.yml...")
+    print("-" * 80)
+
+    databricks_yml_path = f"{repo_root}/databricks.yml"
+    old_catalog = "ignite_2025"
+
+    try:
+        with open(databricks_yml_path, 'r') as f:
+            content = f.read()
+
+        # Replace catalog name
+        if f"catalog: {old_catalog}" in content:
+            updated_content = content.replace(f"catalog: {old_catalog}", f"catalog: {catalog_name}")
+            with open(databricks_yml_path, 'w') as f:
+                f.write(updated_content)
+            print(f"✅ Updated catalog from '{old_catalog}' to '{catalog_name}'")
+        elif f"catalog: {catalog_name}" in content:
+            print(f"ℹ️  Catalog already set to '{catalog_name}'")
+        else:
+            print(f"⚠️  Could not find 'catalog: {old_catalog}' in databricks.yml")
+    except Exception as e:
+        print(f"❌ Error updating catalog: {str(e)}")
 
 print("=" * 80)
 

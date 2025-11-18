@@ -133,11 +133,12 @@ Follow these steps carefully. Each step includes success checkpoints and trouble
 6. Scroll to the **final output** (Step 10)
 
 **What this creates:**
--  Catalog: `ignite_2025`
--  Your personal schema: `ignite_2025.<your_username>`
--  Volume: `ignite_2025.<your_username>.file_data`
+-  Catalog: `adb_lab531_<user_id>` (auto-generated from your email, e.g., `adb_lab531_56748340`)
+-  Your personal schema: `<your_catalog>.<your_username>`
+-  Volume: `<your_catalog>.<your_username>.file_data`
 -  SQL Warehouse: `Serverless Starter Warehouse` - 2X-Small (auto-created if needed)
 -  Deployment guide notebook: `02_deploy_lab.ipynb` (personalized with your repo path)
+-  Updates `databricks.yml` with your catalog name (auto-propagates to pipeline and job)
 
 
 ---
@@ -296,7 +297,7 @@ See [utilities/common_functions.py](lab/01-Data-Transformation/utilities/common_
 #### Part A: Explore Table with Catalog Explorer
 
 1. Click **Catalog** in the left sidebar
-2. Navigate: `ignite_2025` → `<your_schema>` → `dim_customer`
+2. Navigate: `<your_catalog>` → `<your_schema>` → `dim_customer`
 
    ![Catalog Explorer](img/catalog_explorer_view.png)
 
@@ -316,7 +317,7 @@ See [utilities/common_functions.py](lab/01-Data-Transformation/utilities/common_
 **What is a Metric View?**
 Metric views provide centralized definitions for business metrics, ensuring everyone uses the same calculations.
 
-1. Navigate: `ignite_2025` → `<your_schema>` → `wanderbricks_bookings_metrics`
+1. Navigate: `<your_catalog>` → `<your_schema>` → `wanderbricks_bookings_metrics`
 2. Click **Overview** tab:
    - See all **Measures** (metrics like Total Revenue, Total Bookings)
    - See all **Dimensions** (grouping columns like Country, Property Type)
@@ -369,7 +370,7 @@ AI/BI Genie provides a conversational interface for querying your data using nat
 1. Click **Genie** in the left sidebar
 2. Click **New** button
 3. **Connect your Data:**
-   - Navigate to: `ignite_2025` → `<your_schema>` → `wanderbricks_bookings_metrics`
+   - Navigate to: `<your_catalog>` → `<your_schema>` → `wanderbricks_bookings_metrics`
    - Select the metric view
    - Click **Create**
 4. Optionally update the **Genie space name** to `Wanderbricks Booking Insights`

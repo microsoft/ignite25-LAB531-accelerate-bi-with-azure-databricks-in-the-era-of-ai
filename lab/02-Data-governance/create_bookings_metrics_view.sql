@@ -4,8 +4,16 @@
 -- Set catalog and schema context
 DECLARE OR REPLACE VARIABLE target_catalog STRING;
 DECLARE OR REPLACE VARIABLE target_schema STRING;
+DECLARE OR REPLACE VARIABLE user_id STRING;
 
-SET VARIABLE target_catalog = 'ignite_2025';  -- Default catalog
+-- Auto-detect catalog from user email (e.g., User1-56748340@... → adb_lab531_56748340)
+-- Extract numeric user ID from email prefix (between '-' and '@')
+SET VARIABLE user_id = REGEXP_EXTRACT(CURRENT_USER(), '-([0-9]+)@', 1);
+SET VARIABLE target_catalog = CASE
+    WHEN user_id IS NOT NULL AND user_id != '' THEN CONCAT('adb_lab531_', user_id)
+    ELSE CONCAT('adb_lab531_', LOWER(REPLACE(REPLACE(SPLIT(CURRENT_USER(), '@')[0], '.', '_'), '-', '_')))
+END;
+
 SET VARIABLE target_schema = LOWER(REPLACE(REPLACE(SPLIT(CURRENT_USER(), '@')[0], '.', '_'), '-', '_'));  -- Auto-detect schema
 
 -- Set the context so we don't need to qualify table names

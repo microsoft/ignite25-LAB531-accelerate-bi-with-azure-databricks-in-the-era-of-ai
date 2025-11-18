@@ -1,13 +1,13 @@
 # Unity Catalog Catalog Explorer – fact_bookings (Quick Demo)
 
-Purpose: Show key Unity Catalog Catalog Explorer features on the single table produced by the pipeline: `ignite_2025.<your_schema>.fact_bookings`.
+Purpose: Show key Unity Catalog Catalog Explorer features on the single table produced by the pipeline: `<your_catalog>.<your_schema>.fact_bookings`.
 
 Replace `<your_schema>` below with your actual schema (e.g., your username without domain).
 
 ## 1) Discover & Document (AI + Comments)
 
 In Catalog Explorer:
-- Find: Data → Catalogs → `ignite_2025` → Schemas → `<your_schema>` → Tables → `fact_bookings`.
+- Find: Data → Catalogs → `<your_catalog>` → Schemas → `<your_schema>` → Tables → `fact_bookings`.
 - Add description with AI: Table details → Description → Generate with AI (edit, then Save).
 - Column descriptions: Columns tab → select a column (e.g., `total_amount`) → Generate with AI (edit, Save).
 
