@@ -93,8 +93,12 @@ Follow these steps carefully before starting the lab modules.
 
 ## Step 1 - Azure Databricks Workspace
 
-1. Open Microsoft Edge browser
-2. Navigate to +++https://portal.azure.com+++ inside the lab VM
+1. Open Microsoft Edge browser inside the lab VM
+2. In the browser address bar, right-click and paste: +++https://portal.azure.com+++ then press Enter
+
+> [!Warning]
+> Do NOT click the URL directly from these instructions. Clicking will open a browser outside the lab VM. Instead, right-click the URL above to copy it, then paste it into the browser address bar inside the lab VM.
+
 3. Sign in with the username and TAP in the **Resources** tab
 4. On the Home page, under Resources click on **View all resources**
 5. Click the Azure Databricks Workspace resource **(adb-lab531-*)**
@@ -105,7 +109,7 @@ Follow these steps carefully before starting the lab modules.
 1. In the Databricks workspace, in the left sidebar select **Workspace**.
 2. At the top, select **Create**.
 3. Select **Git folder**.
-4. In the **Git URL** field, paste:
+4. In the **Git Repository URL** field, right-click and paste the following URL (right-click to copy first):
 
    +++https://github.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai.git+++
 
@@ -148,11 +152,24 @@ This notebook creates:
 
 You now deploy the pipelines, job, dashboards, metric view, and app used in the labs.
 
-## Step 4 - Deploy Resources (CLI Method - Recommended)
+## Step 4 - Deploy Resources (UI Method - Recommended)
 
-The recommended approach is to deploy using the Web Terminal commands generated in the notebook.
+The recommended approach is to deploy using the Databricks UI.
 
-1. Navigate to the folder icon 
+1. In the left sidebar, select **Deployments**.
+2. Select the **Deploy** button.
+3. When prompted for a target environment, select **dev**.
+4. Confirm the deployment and wait 1-2 minutes for provisioning to complete.
+
+![UI Deployment](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/02_deploy_lab_ui.png)
+
+---
+
+## Step 4 (Alternative) - Deploy Resources (CLI Method)
+
+If you prefer to use the Web Terminal:
+
+1. Navigate to the folder icon
 2. Open **lab/00-setup/02_deploy_lab.ipynb**
 3. If a dialog appears about opening the IPYNB, select **Open as notebook**.
 ![Open Notebook Popup](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/02_deploy_lab_open_notebook.png)
@@ -170,21 +187,8 @@ The recommended approach is to deploy using the Web Terminal commands generated 
 
 It will take 2-5 minutes for the deployment to complete.
 
-> [!Note]  
+> [!Note]
 > The notebook displays the exact commands you should run, including any environment-specific parameters.
-
----
-
-## Step 4 (Alternative) - Deploy Resources (UI Method)
-
-If you prefer not to use the Web Terminal:
-
-1. In the left sidebar, select **Deployments**.
-2. Select the **Deploy** button.
-3. When prompted for a target environment, select **dev**.
-4. Confirm the deployment and wait 1-2 minutes for provisioning to complete.
-
-![UI Deployment](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/02_deploy_lab_ui.png)
 
 ---
 
@@ -520,11 +524,13 @@ In this lab, you will see how to publish Databricks data to Power BI using Direc
 
 4. Right-click the file and select **Download**.
 
+![Download PBIX File](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbix_download.png)
+
 ---
 
 ## Step 2 - Import the Report into Microsoft Fabric
 
-1. Open a browser tab and go to **https://fabric.microsoft.com**.
+1. Open a browser tab **inside the lab VM** and go to **https://fabric.microsoft.com**.
 2. Sign in with your **Username** on the resources tab if you are not already signed in.
 4. In Fabric, open **My workspace**.
 5. Select **Import** → **Report, Paginated Report or Workbook**.
@@ -541,12 +547,14 @@ In this lab, you will see how to publish Databricks data to Power BI using Direc
 2. Navigate to the **Settings** for the dataset / report.
 ![Settings](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_create_new_report3.png)
 3. Update the parameters using your Databricks SQL Warehouse connection details:
-   - **Server hostname**
-   - **HTTP path**
+   - **ServerHostName**
+   - **HTTPPath**
    - **UC_Catalog**: ignite_2025
    - **UC_Schema**: change this to your user schema
 
-You can find both in Databricks under **SQL Warehouses → (your warehouse) → Connection details**.
+![Edit Parameters](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_edit_parameters.png)
+
+You can find ServerHostName and HTTPPath in Databricks under **SQL Warehouses → (your warehouse) → Connection details**.
 
 ![SQL Connections](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/pbi_create_new_report2.png)
 
