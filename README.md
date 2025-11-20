@@ -346,9 +346,9 @@ Review helper functions such as:
 
    **[dev your_name] wanderbricks_lab_etl**
 
-3. Make sure **New pipeline monitoring** is enabled using the toggle in the pipeline UI.
+3. Verify the **(1)New pipeline monitoring** toggle shows `ON` . select **(2) Edit pipeline**  and choose **(3) Proceed with edit**.
 
-![Enable New Pipeline Monitoring](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/new_pipeline_monitoring.png)
+![Unlock and Enable New Pipeline Monitoring](https://raw.githubusercontent.com/microsoft/ignite25-LAB531-accelerate-bi-with-azure-databricks-in-the-era-of-ai/main/img/lakeflow_editor_view.png)
 
 4. Review the following tabs:
    - **Flow / Graph** - DAG of pipeline steps
@@ -629,9 +629,6 @@ In the app UI, explore the following:
 
 - **Property search and filtering**  
   Search for properties by country, city, and date range.
-
-- **AI assistant**  
-  Use the AI assistant (if present) to ask questions similar to Genie but from within the app context.
 
 - **Manager views**  
   Review booking, revenue, and performance dashboards designed for a regional or country manager persona.
