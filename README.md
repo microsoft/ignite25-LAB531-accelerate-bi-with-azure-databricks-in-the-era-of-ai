@@ -264,7 +264,6 @@ Once deployed:
 You should see:
 
 - Property search experience
-- AI assistant
 - Manager dashboards and KPIs
 
 ===
