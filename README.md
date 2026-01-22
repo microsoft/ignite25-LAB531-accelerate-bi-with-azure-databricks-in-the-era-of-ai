@@ -681,3 +681,7 @@ You have now:
 
 > [!Help]  
 > If you experience issues with the lab environment, contact your instructor or support team for assistance.
+
+## 🚀 Try Azure for Free!
+
+Ready to build, experiment, or scale your next project? Kick things off with an Azure Free Trial and get access to popular services, generous monthly credits, and the tools you need to ship fast. 👉 Start your free journey here: https://aka.ms/devrelft
